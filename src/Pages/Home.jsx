@@ -275,7 +275,7 @@ const Home = () => {
               <Row>
                 <Col xs={7}>
                   <div className="inner-column content">
-                    <h2>About</h2>
+                    <h2>About us</h2>
                     <h3>New and Used Professional Equipment.</h3>
                     <p>
                       BroadcastStore or BroadcastStore.co has an extensive
