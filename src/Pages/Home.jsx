@@ -14,7 +14,7 @@ import axios from "axios";
 import { IoStarSharp } from "react-icons/io5";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import headset01 from "../assets/images/headset01.png";
+import headset01 from "../assets/images/hero-img.png";
 import bannerimg from "../assets/images/ubiquiti-transparent1.png";
 import bannerimg2 from "../assets/images/89161553346861.png";
 import productimg from "../assets/images/product-img.png";
@@ -253,7 +253,7 @@ const Home = () => {
             <Container>
               <div className="hero-content">
                 <div className="head">
-                  <h1>HEADSET</h1>
+                  <h1>CAMERA</h1>
                 </div>
                 <div className="image wrapper">
                   <img
@@ -264,7 +264,7 @@ const Home = () => {
                   />
                 </div>
                 <div className="head-stroke">
-                  <h1 data-text="HEADSET">HEADSET</h1>
+                  <h1 data-text="HEADSET">CAMERA</h1>
                 </div>
               </div>
             </Container>
