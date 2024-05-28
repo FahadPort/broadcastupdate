@@ -51,10 +51,12 @@ import KOMODO from "../assets/images/KOMODO.png";
 import Manfrotto from "../assets/images/Manfrotto.png";
 import Steadicam from "../assets/images/Steadicam.png";
 import AOS from "aos";
-import cameraabt from "../assets/images/cameraabt.png"
-
-
-
+import cameraabt from "../assets/images/cameraabt.png";
+import green from "../assets/images/green.png";
+import blue from "../assets/images/blue.png";
+import red from "../assets/images/red.png";
+import white from "../assets/images/white.png";
+import black from "../assets/images/black.png";
 
 // icons
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -151,6 +153,34 @@ const Home = () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
+  const images = [headset01, headset01, headset01, headset01, headset01];
+  const backgrounds = [
+    "radial-gradient(50% 50% at 50% 50%, #C7F6D0 0%, #7CB686 92.19%)",
+    "radial-gradient(50% 50% at 50% 50%, #D1E4F6 0%, #5F9CCF 100%)",
+    "radial-gradient(50% 50% at 50% 50%, #FFB7B2 0%, #ED746E 100%)",
+    "radial-gradient(50% 50% at 50% 50%, #D7D7D7 0%, #979797 100%)",
+    "radial-gradient(50% 50% at 50% 50%, #6B6B6B 0%, #292929 100%)",
+  ];
+
+  const [imageIndex, setImageIndex] = useState(0);
+
+  useEffect(() => {
+    const updateSlider = () => {
+      setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const interval = setInterval(updateSlider, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  const getClassName = (index) => {
+    if (index === imageIndex) return "active";
+    if (index === (imageIndex - 1 + images.length) % images.length)
+      return "previous";
+    if (index === (imageIndex + 1) % images.length) return "next";
+    return "inactive";
+  };
 
   var settings = {
     dots: false,
@@ -249,12 +279,10 @@ const Home = () => {
           </Container>
         </Grid> */}
 
-          <div id="hero">
+          {/* <div id="hero">
             <Container>
               <div className="hero-content">
-                <div className="head">
-                  <h1>CAMERA</h1>
-                </div>
+                
                 <div className="image wrapper">
                   <img
                     className="photo"
@@ -263,11 +291,42 @@ const Home = () => {
                     alt=""
                   />
                 </div>
-                <div className="head-stroke">
-                  <h1 data-text="HEADSET">CAMERA</h1>
-                </div>
+                
               </div>
             </Container>
+          </div> */}
+
+          <div id="hero-cameras">
+            <div className="slider-main">
+            <div className="head">
+                  <h1>CAMERA</h1>
+                </div>
+              <div className="slider-images">
+                {images.map((src, index) => (
+                  <img
+                    key={index}
+                    className={`slider-image ${getClassName(index)}`}
+                    src={src}
+                    alt=""
+                  />
+                ))}
+              </div>
+              <div id="backgrounds">
+                {backgrounds.map((background, index) => (
+                  <div
+                    key={index}
+                    className="background"
+                    style={{
+                      background: background,
+                      opacity: imageIndex === index ? 1 : 0,
+                    }}
+                  ></div>
+                ))}
+              </div>
+              <div className="head-stroke">
+                  <h1 data-text="HEADSET">CAMERA</h1>
+                </div>
+            </div>
           </div>
 
           <div id="About">
@@ -300,7 +359,7 @@ const Home = () => {
                 </Col>
                 <Col xs={5}>
                   <div className="inner-column">
-                    <img src={cameraabt}/>
+                    <img src={cameraabt} />
                   </div>
                 </Col>
               </Row>
