@@ -541,63 +541,63 @@ const Home = () => {
             </Slider>
           </Grid>
 
-          <Grid className="all-prod-sec">
+          <Grid className="ft-products" id="all-pro">
             <Container>
-              <Grid className="head-title">
-                <Typography variant="h2">All Products</Typography>
-              </Grid>
+            <div className="ft-pro-head">
+                <Row>
+                  <Col xs={6}>
+                    <h2 className="heading">Featured Products</h2>
+                  </Col>
+                  <Col xs={6}>
+                    <div className="button">
+                      <Button className="lrn-more">
+                        <Link to={"#"}>
+                          Best Seller <FaArrowRightLong />
+                        </Link>
+                      </Button>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
 
-              <Grid
-                id="London"
-                className={`tabcontent ${
-                  activeTab === "London" ? "active" : ""
-                }`}
-              >
-                <Grid container spacing={2}>
+             
+                <Grid className="allpro-container" container spacing={2}>
                   {featuredProducts.slice(0, 8).map((product) => (
                     <Grid item xs={3} key={product.id}>
                       <Grid className="ftrd-slide">
-                        <Grid className="ftrd-slide-blk">
-                          <Grid className="prod-img">
-                            <Typography variant="h6">-20%</Typography>
-                            <img
-                              src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
-                              alt=""
-                            />
-                          </Grid>
-                          <Grid className="pro-disp">
-                            <Grid className="prod-sku">
-                              <Typography variant="body">SKU#</Typography>
-                              <Typography variant="body">
-                                {product.sku}
-                              </Typography>
-                            </Grid>
-                            <Typography variant="h5">
-                              {product.title}
-                            </Typography>
-                            <p className="body">{product.short_desc}</p>{" "}
-                            {/* Render HTML content */}
-                            <Typography variant="h6">
-                              ${product.price}
-                            </Typography>
-                            <Button className="theme-btn">
-                              <Link
-                                to={`/${product.slug}`}
-                                onClick={(event) =>
-                                  handleProductSelect(product, event)
-                                }
-                                className="product-link" // Add a class for styling
-                              >
-                                READ MORE
-                              </Link>
-                            </Button>
-                          </Grid>
-                        </Grid>
+                      <Grid className="ftrd-pro">
+                    <div class="product">
+                      <h4 class="title">{product.title}</h4>
+                      <p class="sku">SKU# {product.sku}</p>
+                      <div class="pro-image">
+                        <img
+                          src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
+                          alt=""
+                        />
+                      </div>
+                      <p class="short-des">{product.short_desc}</p>
+                      <div class="price-btn">
+                        <p class="price">
+                          Price <span class="price-no">${product.price}</span>
+                        </p>
+                        <Button className="lrn-more cart">
+                          <Link
+                            to={`/${product.slug}`}
+                            onClick={(event) =>
+                              handleProductSelect(product, event)
+                            }
+                          >
+                            learn More
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </Grid>
                       </Grid>
                     </Grid>
                   ))}
                 </Grid>
-              </Grid>
+              
             </Container>
           </Grid>
         </>
@@ -662,181 +662,7 @@ const Home = () => {
 
       {!selectedProduct && (
         <>
-          <Grid id="pro-cards">
-            <Container>
-              <Grid container spacing={2}>
-                <Grid item xs={7}>
-                  <Grid id="inner-card" className="blue">
-                    <Grid container spacing={2}>
-                      <Grid item xs={6}>
-                        <Grid className="content">
-                          <Typography variant="h2">
-                            A4Tech HS-8i Stereo Headset
-                          </Typography>
-                          <Typography variant="body1">
-                            The soft ear-pad covers comfortably on the ear to
-                            provide absolute sound quality as if you're in your
-                            own world.
-                          </Typography>
-                          <Button className="arrow-btn">
-                            <Link to={"/A4Techheadset"}>
-                              Buy Now <FaArrowRightLong />{" "}
-                            </Link>
-                          </Button>
-                        </Grid>
-                      </Grid>
-                      <Grid item xs={6}>
-                        <Grid className="image">
-                          <img src={man} alt="" />
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs={5}>
-                  <Grid id="inner-card" className="yellow">
-                    <Grid container spacing={2}>
-                      <Grid item xs={5}>
-                        <Grid className="content">
-                          <Typography variant="h2">
-                            iPad Pro Supercharged by
-                          </Typography>
-                        </Grid>
-                      </Grid>
-                      <Grid item xs={7}>
-                        <Grid className="content">
-                          <Button className="arrow-btn">
-                            <Link to={"/Ipadpro"}>
-                              Buy Now Instantly <FaArrowRightLong />{" "}
-                            </Link>
-                          </Button>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                    <Grid container spacing={2}>
-                      <Grid item xs={6}>
-                        <Grid className="image">
-                          <img src={Manfrotto} alt="" />
-                        </Grid>
-                      </Grid>
-                      <Grid item xs={6}>
-                        <Grid className="image image-mob">
-                          <img src={Steadicam} alt="" />
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Container>
-          </Grid>
-          <Grid id="pro-cards">
-            <Container>
-              <Grid container spacing={2}>
-                <Grid item xs={5}>
-                  <Grid id="inner-card" className="green">
-                    <Grid container spacing={2}>
-                      <Grid item xs={5}>
-                        <Grid className="content">
-                          <Typography variant="h2">Sony HDC-3500L</Typography>
-                        </Grid>
-                      </Grid>
-                      <Grid item xs={7}>
-                        <Grid className="content">
-                          <Button className="arrow-btn">
-                            <Link to={"/Applemonitor"}>
-                              Click Here To View All <FaArrowRightLong />{" "}
-                            </Link>
-                          </Button>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                    <Grid container spacing={2}>
-                      <Grid item xs={12}>
-                        <Grid className="image">
-                          <img src={sony} alt="" />
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs={7}>
-                  <Grid id="inner-card" className="d-blue">
-                    <Grid container spacing={2}>
-                      <Grid item xs={6}>
-                        <Grid className="content">
-                          <Typography variant="h2">
-                            RED DIGITAL CINEMA <br />
-                            KOMODO-X
-                          </Typography>
-                          <Typography variant="body1">
-                            KOMODO-X™ is the next evolution in the KOMODO
-                            family, multiplying the frame rates, dynamic range,
-                            and usability of the original KOMODO to break new
-                            grounds.{" "}
-                          </Typography>
-                          <Button className="arrow-btn">
-                            <Link to={"/SpeakerAlesis"}>
-                              Click Here To View All <FaArrowRightLong />{" "}
-                            </Link>
-                          </Button>
-                        </Grid>
-                      </Grid>
-                      <Grid item xs={6}>
-                        <Grid className="image">
-                          <img src={KOMODO} alt="" />
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Container>
-          </Grid>
-
-          <Grid id="newsletter">
-            <Container>
-              <Grid className="news-con">
-                <Grid container>
-                  <Grid item xs={12}>
-                    <Typography variant="h2">Sign Up for Newsletter</Typography>
-                    <Typography variant="body1">
-                      Receive new updates on seasonal update,
-                      <br /> security updates, promotional updates.{" "}
-                    </Typography>
-                  </Grid>
-
-                  <Grid container spacing={2}>
-                    <Grid item xs={4}>
-                      <Grid className="textField">
-                        <TextField
-                          id="outlined-basic"
-                          label="Name"
-                          variant="outlined"
-                        />
-                      </Grid>
-                    </Grid>
-                    <Grid item xs={4}>
-                      <Grid className="textField">
-                        <TextField
-                          id="outlined-basic"
-                          label="Email"
-                          variant="outlined"
-                        />
-                      </Grid>
-                    </Grid>
-                    <Grid item xs={4}>
-                      <Grid className="sbmt-btn">
-                        <Button className="submt">
-                          <Link to={"/"}>Submit</Link>
-                        </Button>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Container>
-          </Grid>
+          
         </>
       )}
     </Grid>
