@@ -57,11 +57,11 @@ import blue from "../assets/images/blue.png";
 import red from "../assets/images/red.png";
 import white from "../assets/images/white.png";
 import black from "../assets/images/black.png";
+import tech from "../assets/images/tech.png";
 
 // icons
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
-
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -184,7 +184,7 @@ const Home = () => {
   };
 
   var settings = {
-    dots: false,
+    dots: true,
     arrows: true,
     infinite: true,
     speed: 500,
@@ -330,7 +330,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div id="About">
+          <div id="About" className="brd-line">
             <div className="abt-content">
               <Row>
                 <Col xs={7}>
@@ -367,7 +367,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div id="feature-products">
+          <div id="feature-products" className="brd-line">
             <Container>
               <div className="ft-pro-head">
                 <Row>
@@ -376,106 +376,135 @@ const Home = () => {
                   </Col>
                   <Col xs={6}>
                     <div className="button">
-                    <Button className="lrn-more">
-                      <Link to={"#"}>Best Seller <FaArrowRightLong /></Link>
-                    </Button>
+                      <Button className="lrn-more">
+                        <Link to={"#"}>
+                          Best Seller <FaArrowRightLong />
+                        </Link>
+                      </Button>
                     </div>
                   </Col>
                 </Row>
-
               </div>
-             
             </Container>
           </div>
 
           <div className="ft-products">
-
-<Slider {...settings}>
-  {featuredProducts.map((product) => (
-    <Grid className="ftrd-slide" key={product.id}>
-
-      <Grid className="ftrd-pro">
-
-      <div class="product">
-                <h4 class="title">{product.title}</h4>
-                <p class="sku">SKU# {product.sku}</p>
-                <div class="pro-image">
-                    <img src={`https://thebroadcaststore.co/admins/public/${product.img_path}`} alt=""/>
-                </div>
-                <p class="short-des">{product.short_desc}</p>
-                <div class="price-btn">
-                    <p class="price">Price <span class="price-no">${product.price}</span></p>
-                    <Button className="lrn-more cart">
-                        <Link to={`/${product.slug}`} onClick={(event)=>
-                        handleProductSelect(product, event)
-                        }
-                        >
-                        learn More
-                        </Link>
-                    </Button>
-                </div>
-            </div>
-
-
-      </Grid>
-
-      
-    </Grid>
-  ))}
-</Slider>
-
-
-
-            
-             </div>
-
-
-
-          <Grid className="ftured-sec">
-            <Container>
-              <Grid className="head-title">
-                <Typography variant="h2">Featured Products</Typography>
-              </Grid>
-              <Slider {...settings}>
-                {featuredProducts.map((product) => (
-                  <Grid className="ftrd-slide" key={product.id}>
-                    <Grid className="ftrd-slide-blk">
-                      <Grid className="prod-img">
-                        <Typography variant="h6">-20%</Typography>
+            <Slider {...settings}>
+              {featuredProducts.map((product) => (
+                <Grid className="ftrd-slide" key={product.id}>
+                  <Grid className="ftrd-pro">
+                    <div class="product">
+                      <h4 class="title">{product.title}</h4>
+                      <p class="sku">SKU# {product.sku}</p>
+                      <div class="pro-image">
                         <img
                           src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
                           alt=""
                         />
-                      </Grid>
-                      <Grid className="pro-disp">
-                        <Grid className="prod-sku">
-                          <Typography variant="body">SKU#</Typography>
-                          <Typography variant="body">{product.sku}</Typography>
-                        </Grid>
-                        <Typography variant="h5">{product.title}</Typography>
-                        <p className="body">{product.short_desc}</p>
-                        <Typography variant="h6">${product.price}</Typography>
-                        <Button className="theme-btn">
+                      </div>
+                      <p class="short-des">{product.short_desc}</p>
+                      <div class="price-btn">
+                        <p class="price">
+                          Price <span class="price-no">${product.price}</span>
+                        </p>
+                        <Button className="lrn-more cart">
                           <Link
                             to={`/${product.slug}`}
                             onClick={(event) =>
                               handleProductSelect(product, event)
                             }
-                            className="product-link" // Add a class for styling
                           >
-                            READ MORE
+                            learn More
                           </Link>
                         </Button>
-                      </Grid>
-                    </Grid>
+                      </div>
+                    </div>
                   </Grid>
-                ))}
-              </Slider>
+                </Grid>
+              ))}
+            </Slider>
+          </div>
+
+          <div id="tech">
+              <Container>
+             <div className="tech-content">
+
+              <h2 className="heading">Tech Specs</h2>
+
+              <div className="tech-spec">
+              <Row>
+                <Col xs={4}>
+                  <div className="tech-inner ze">
+                  <h4>Zoom Extension</h4>
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    
+                  </div>
+                </Col>
+                <Col xs={5}>
+                  <div className="tech-inner line-img">
+
+
+                  </div>
+                </Col>
+                <Col xs={3}>
+                  <div className="tech-inner ar">
+                  <h4>Aperture Range</h4>
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={4} className="fr-col">
+                  <div className="tech-inner fr ">
+                  <h4>Focus Ring</h4>
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    
+                  </div>
+                </Col>
+                <Col xs={5}>
+                  <div className="tech-inner centerimg">
+                  <img src={tech}/>
+
+                  </div>
+                </Col>
+                <Col xs={3} className="fs-inner">
+                  <div className="tech-inner fs">
+                  <h4>Filter Size</h4>
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12}>
+                  <div className="tech-inner af-motr">
+                  <h4>AF Motor Type</h4>
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    
+                  </div>
+                </Col>
+                
+              </Row>
 
 
 
-            </Container>
-          </Grid>
+              </div>
+
+
+
+             </div>
+
+                
+              </Container>
+
+
+          </div>
+
+
+
+
+
 
           <Grid className="partners-sec">
             <Slider {...logos}>

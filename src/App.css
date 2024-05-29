@@ -384,7 +384,7 @@ line-height: 28px;
 font-weight: 600 !important;
 }
 
-div#About h2:before {
+.brd-line h2:before {
   background: linear-gradient(45deg, #006BCD, #04B4FF);
   height: 50px;
   width: 5px;
@@ -395,7 +395,9 @@ div#About h2:before {
   content: "";
   animation: moveUpDown 2s infinite; /* Apply the animation */
 }
-
+.brd-line h2{
+  position: relative;
+}
 div#About .content:before {
   content: "About";
   position: absolute;
@@ -451,10 +453,9 @@ h2.heading {
 }
 
 div#feature-products {
-  padding: 110px 0;
+  padding: 110px 0 100px;
   position: relative;
 }
-
 div#feature-products:before {
   content: "BEST SELLER";
   position: absolute;
@@ -476,13 +477,13 @@ div#feature-products:before {
   -webkit-text-fill-color: transparent;
 }
 
-.ft-products  h4.title {
-  font-size: 26px  !important;
-  line-height: 34px  !important;
+.ft-products h4.title {
+  font-size: 22px !important;
+  line-height: 30px !important;
   font-family: 'Montserrat' !important;
   font-weight: bold !important;
   color: #111111;
-  min-height: 110px;
+  min-height: 90px;
 }
 
 .ft-products  p.sku {
@@ -540,8 +541,9 @@ div#feature-products:before {
 
 
 .ft-products img {
-    width: 100%;
-    min-height: 210px !important;
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
 }
 
 
@@ -549,22 +551,156 @@ div#feature-products:before {
 
 
 .product {
-    margin: 0 15px;
-    border: 1px solid red;
-    min-height: 360px;
-    padding: 30px;
-    border-image: linear-gradient(45deg, #04B4FF, #006BCD) 1;
+  margin: 0 15px;
+  min-height: 540px;
+  padding: 30px;
+  border: 3px solid #006BCD;
+  border-radius: 0 20px 0 20px;
+  transition: all 0.5s;
 }
 
+.ft-products .slick-track {
+  padding: 50px 0;
+}
+.product:hover {
+  transform: scale(1.05);
+}
+.ft-products {
+  padding-bottom: 70px;
+}
+.ft-products .slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 5px;
+  content: '' !important;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(45deg, #006BCD, #04B4FF);
+  opacity: 0.4;
+}
+.ft-products .slick-dots li {
+  margin: 0 20px;
+}
 
 
 
 /* feature Products Section End  */
 
 
+/* Tech Spec Section CSS  */
+
+
+div#tech {
+  padding: 100px 0;
+  position: relative;
+}
+
+div#tech h2 {
+  text-align: center;
+  position: relative;
+}
+
+div#tech h2:before {
+  content: "";
+  background: linear-gradient(45deg, #006BCD, #04B4FF);
+  height: 5px;
+  width: 145px;
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  right: 0;
+  bottom: -10px;
+  margin: auto;
+}
+
+.tech-spec {
+  padding-top: 100px;
+}
+
+div#tech:before {
+  content: "Tech Specs";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -6%;
+  display: flex;
+  justify-content: center;
+  font-size: 270px;
+  color: #424040 !important;
+  text-transform: uppercase;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: #42404017 !important;
+  -webkit-text-fill-color: transparent;
+}
+
+.tech-inner h4 {
+  font-size: 25px !important;
+  line-height: 33px !important;
+  color: #000;
+  font-family: 'Montserrat' !important;
+  font-weight: 600 !important;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.tech-inner h4:before {
+  content: "";
+  background: linear-gradient(45deg, #006BCD, #04B4FF);
+  height: 5px;
+  width: 85px;
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  bottom: -10px;
+  margin: auto;
+}
+
+.tech-inner p {
+  font-size: 13px !important;
+  line-height: 21px;
+  font-family: 'Montserrat' !important;
+  color: #383838;
+  font-weight: 500 !important;
+}
+
+div#tech .fs-inner {
+  display: flex;
+  align-items: end;
+}
+
+div#tech .af-motr {
+  max-width: 30%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+div#tech .tech-inner.af-motr  h4:before {
+  left: 0;
+  right: 0;
+}
 
 
 
+div#tech .fr-col {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -10%;
+}
+
+div#tech .ar, div#tech .fs {
+  position: relative;
+  left: 30%;
+}
+/* Tech Spec Section End  */
 
 
 
@@ -692,108 +828,6 @@ div#feature-products:before {
 
 
 
-/* Featured Sec Css Start */
-.ftured-sec {
-  background-color: #f1f5fb;
-  padding: 60px 0;
-}
-.ftrd-slide-blk {
-  background-color: #fff;
-  border-radius: 10px;
-  margin: 0 8px;
-  padding: 22px;
-  border: 1px solid #dfdfdf;
-}
-.prod-img {
-  background-color: #f4f4f4;
-  position: relative;
-  height: 170px;
-  display: inline-flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 15px;
-  width: 100%;
-}
-.prod-img img {
-  width: 70%;
-  height: 80%;
-  object-fit: cover;
-}
-.pro-disp p.body {
-  min-height: 120px;
-}
-.prod-img h6 {
-  background-color: #00acea;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 30px;
-  padding: 3px 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.prod-sku {
-  display: flex;
-  justify-content: space-between;
-}
-.pro-disp {
-  padding-top: 20px;
-}
-.pro-disp h5 {
-  font-size: 14px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  line-height: 20px;
-}
-.all-prod-sec .theme-btn {
-  margin-top: 14px;
-}
-.pro-disp .MuiTypography-body {
-  font-size: 14px;
-  line-height: 22px;
-}
-.pro-disp h6 {
-  margin: 15px 0;
-}
-.head-title {
-  margin: 0 0 30px;
-}
-.head-title h2 {
-  font-size: 38px;
-}
-.ftured-sec .slick-prev:before {
-  content: "←";
-  color: #fff;
-  font-family: math;
-  font-size: 14px;
-}
-.ftured-sec .slick-next:before {
-  content: "→";
-  color: #fff;
-  font-family: math;
-  font-size: 14px;
-}
-.ftured-sec .slick-prev {
-  left: auto;
-  right: 70px;
-}
-.ftured-sec .slick-next {
-  right: 12px;
-}
-.ftured-sec .slick-arrow {
-  top: -60px;
-  background-color: #001834;
-  border-radius: 100%;
-  transform: scale(2.4);
-}
-.ftured-sec .slick-prev:hover,
-.ftured-sec .slick-prev:focus,
-.ftured-sec .slick-next:hover,
-.ftured-sec .slick-next:focus {
-  background: #001834a8;
-}
 
 /* Logos Sec Css Start */
 .slide-logo {
