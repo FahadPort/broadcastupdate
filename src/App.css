@@ -383,7 +383,31 @@ font-size: 20px;
 line-height: 28px;
 font-weight: 600 !important;
 }
+.lrn-more a:before {
+  content: "";
+  background: linear-gradient(45deg, #04B4FF, #006BCD);
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
 
+
+
+.lrn-more a {
+  overflow: hidden !important;
+}
+
+.lrn-more {
+  padding: unset !important;
+}
+
+.lrn-more a:hover:before {
+  width: 100%;
+}
 .brd-line h2:before {
   background: linear-gradient(45deg, #006BCD, #04B4FF);
   height: 50px;
@@ -628,7 +652,7 @@ div#tech:before {
   position: absolute;
   left: 0;
   right: 0;
-  top: -6%;
+  top: 0%;
   display: flex;
   justify-content: center;
   font-size: 270px;
@@ -639,8 +663,8 @@ div#tech:before {
   -webkit-text-stroke: 2px;
   -webkit-text-stroke-color: #42404017 !important;
   -webkit-text-fill-color: transparent;
+  line-height: 270px;
 }
-
 .tech-inner h4 {
   font-size: 25px !important;
   line-height: 33px !important;
@@ -653,16 +677,24 @@ div#tech:before {
 
 .tech-inner h4:before {
   content: "";
-  background: linear-gradient(45deg, #006BCD, #04B4FF);
+  background: linear-gradient(90deg, #006BCD, #04B4FF);
   height: 5px;
-  width: 85px;
+  width: 20%; /* Extend the width to 100% to cover the entire element */
   position: absolute;
   left: 0;
   z-index: 999;
   bottom: -10px;
-  margin: auto;
+  background-size: 500% 400%; /* Make the background larger horizontally */
+  animation: moveGradient 2s linear infinite; /* Apply the animation */
 }
-
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
 .tech-inner p {
   font-size: 13px !important;
   line-height: 21px;
@@ -682,9 +714,10 @@ div#tech .af-motr {
   margin: 0 auto;
 }
 
-div#tech .tech-inner.af-motr  h4:before {
+div#tech .tech-inner.af-motr h4:before {
   left: 0;
   right: 0;
+  margin: auto;
 }
 
 
@@ -700,11 +733,135 @@ div#tech .ar, div#tech .fs {
   position: relative;
   left: 30%;
 }
+
+.tech-inner {
+  position: relative;
+}
+
+.ze:before {
+  content: "";
+  background: url("./assets/images/arrowone.png");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -10px;
+  z-index: 99999;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right !important;
+  background-position-y: center;
+  left: 80%;
+}
+.ar:before {
+  content: "";
+  background: url("./assets/images/arrowtwo.png");
+  height: 60%;
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  z-index: 99999;
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: 80%;
+}
+.fr:before {
+  content: "";
+  background: url("./assets/images/arrowthree.png");
+  height: 190%;
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  z-index: 99999;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 50%;
+
+}
+
+.af-motr:before {
+  content: "";
+  background: url("./assets/images/arrowfour.png");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -110%;
+  z-index: 99999;
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: 10%;
+  background-position-x: right;
+  background-position-y: top !important;
+}
+.fs:before {
+  content: "";
+  background: url("./assets/images/arrowfive.png");
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  z-index: 99999;
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 110%;
+  right: 50%;
+}
+div#tech .centerimg img {
+  position: relative;
+  animation: zoomInOut 4s infinite;
+}
+@keyframes zoomInOut {
+0% {
+  transform: scale(1); /* Initial scale */
+}
+50% {
+  transform: scale(1.1); /* Scale up to 1.5 times */
+}
+100% {
+  transform: scale(1); /* Scale back to original size */
+}
+}
+.pro-image {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.pro-image:before {
+      content: "";
+      background: linear-gradient(90deg, #006BCD, #04B4FF);
+      height: 5px;
+      width: 70%;
+      position: absolute;
+      left: 0;
+      z-index: 999;
+      bottom: -20px;
+      background-size: 500% 400%;
+      animation: moveGradient 2s linear infinite;
+      margin: auto;
+      right: 0;
+}
+
+
+
 /* Tech Spec Section End  */
 
+/* All Products Section CSS  */
 
+.allpro-container {
+  padding-top: 100px;
+  row-gap: 20px;
+}
+div#all-pro .product {
+  margin: unset !important;
+  padding: 20px;
+  min-height: 520px;
+}
 
+.allpro-container h4.title {
+  font-size: 16px !important;
+  line-height: 24px !important;
+  min-height: 60px;
+}
 
+/* All Products Section End  */
 
 
 
@@ -834,8 +991,30 @@ div#tech .ar, div#tech .fs {
   margin: 0 18px;
 }
 .partners-sec {
-  padding: 25px 0;
+  padding: 70px 0;
+  background: linear-gradient(45deg, #2F2F2F, #111111);
 }
+.partners-sec img {
+  filter: brightness(0) invert(1);
+ 
+}
+
+/* All product Section CSS  */
+div#all-pro {
+  padding: 130px 0;
+}
+
+div#all-pro .product {
+  margin: unset !important;
+}
+
+/* All product Section End  */
+
+
+
+
+
+
 
 /* All Product Sec Css Start */
 .all-prod-sec {
