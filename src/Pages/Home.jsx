@@ -62,6 +62,7 @@ import black from "../assets/images/black.png";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
 
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -187,7 +188,7 @@ const Home = () => {
     arrows: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [
       {
@@ -237,7 +238,7 @@ const Home = () => {
   };
 
   return (
-    <Grid>
+    <Grid className="body-bg">
       {!selectedProduct && (
         <>
           {/* <Grid className="banner">
@@ -298,9 +299,9 @@ const Home = () => {
 
           <div id="hero-cameras">
             <div className="slider-main">
-            <div className="head">
-                  <h1>CAMERA</h1>
-                </div>
+              <div className="head">
+                <h1>CAMERA</h1>
+              </div>
               <div className="slider-images">
                 {images.map((src, index) => (
                   <img
@@ -324,8 +325,8 @@ const Home = () => {
                 ))}
               </div>
               <div className="head-stroke">
-                  <h1 data-text="HEADSET">CAMERA</h1>
-                </div>
+                <h1 data-text="HEADSET">CAMERA</h1>
+              </div>
             </div>
           </div>
 
@@ -365,6 +366,70 @@ const Home = () => {
               </Row>
             </div>
           </div>
+
+          <div id="feature-products">
+            <Container>
+              <div className="ft-pro-head">
+                <Row>
+                  <Col xs={6}>
+                    <h2 className="heading">Featured Products</h2>
+                  </Col>
+                  <Col xs={6}>
+                    <div className="button">
+                    <Button className="lrn-more">
+                      <Link to={"#"}>Best Seller <FaArrowRightLong /></Link>
+                    </Button>
+                    </div>
+                  </Col>
+                </Row>
+
+              </div>
+             
+            </Container>
+          </div>
+
+          <div className="ft-products">
+
+<Slider {...settings}>
+  {featuredProducts.map((product) => (
+    <Grid className="ftrd-slide" key={product.id}>
+
+      <Grid className="ftrd-pro">
+
+      <div class="product">
+                <h4 class="title">{product.title}</h4>
+                <p class="sku">SKU# {product.sku}</p>
+                <div class="pro-image">
+                    <img src={`https://thebroadcaststore.co/admins/public/${product.img_path}`} alt=""/>
+                </div>
+                <p class="short-des">{product.short_desc}</p>
+                <div class="price-btn">
+                    <p class="price">Price <span class="price-no">${product.price}</span></p>
+                    <Button className="lrn-more cart">
+                        <Link to={`/${product.slug}`} onClick={(event)=>
+                        handleProductSelect(product, event)
+                        }
+                        >
+                        learn More
+                        </Link>
+                    </Button>
+                </div>
+            </div>
+
+
+      </Grid>
+
+      
+    </Grid>
+  ))}
+</Slider>
+
+
+
+            
+             </div>
+
+
 
           <Grid className="ftured-sec">
             <Container>
@@ -406,6 +471,9 @@ const Home = () => {
                   </Grid>
                 ))}
               </Slider>
+
+
+
             </Container>
           </Grid>
 
