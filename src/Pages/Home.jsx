@@ -51,6 +51,7 @@ import KOMODO from "../assets/images/KOMODO.png";
 import Manfrotto from "../assets/images/Manfrotto.png";
 import Steadicam from "../assets/images/Steadicam.png";
 import AOS from "aos";
+import "aos/dist/aos.css";
 import cameraabt from "../assets/images/cameraabt.png";
 import green from "../assets/images/green.png";
 import blue from "../assets/images/blue.png";
@@ -58,6 +59,13 @@ import red from "../assets/images/red.png";
 import white from "../assets/images/white.png";
 import black from "../assets/images/black.png";
 import tech from "../assets/images/tech.png";
+
+import panasonic from "../assets/images/panasonic.png";
+import pentax from "../assets/images/pentax.png";
+import nikon from "../assets/images/nikon.png";
+import sonyy from "../assets/images/sonyy.png";
+import canon from "../assets/images/canon.png";
+import fujifilm from "../assets/images/fujifilm.png";
 
 // icons
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -139,7 +147,7 @@ const Home = () => {
       const y = event.clientY / window.innerHeight - 0.5;
 
       gsap.to(photoRef.current, {
-        duration: 0.6,
+        duration: 0.9,
         rotationY: 5 * x,
         rotationX: 5 * y,
         ease: "power1.out",
@@ -237,6 +245,42 @@ const Home = () => {
     buttons: false,
   };
 
+  var specification = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        specification: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        specification: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        specification: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+
   return (
     <Grid className="body-bg">
       {!selectedProduct && (
@@ -300,7 +344,7 @@ const Home = () => {
           <div id="hero-cameras">
             <div className="slider-main">
               <div className="head">
-                <h1>CAMERA</h1>
+                <h1 data-aos="fade-up">CAMERA</h1>
               </div>
               <div className="slider-images">
                 {images.map((src, index) => (
@@ -325,7 +369,7 @@ const Home = () => {
                 ))}
               </div>
               <div className="head-stroke">
-                <h1 data-text="HEADSET">CAMERA</h1>
+                <h1 data-aos="fade-down">CAMERA</h1>
               </div>
             </div>
           </div>
@@ -335,32 +379,34 @@ const Home = () => {
               <Row>
                 <Col xs={7}>
                   <div className="inner-column content">
-                    <h2>About us</h2>
-                    <h3>New and Used Professional Equipment.</h3>
-                    <p>
+                    <h2 data-aos="fade-up">About us</h2>
+                    <h3 data-aos="fade-up">
+                      New and Used Professional Equipment.
+                    </h3>
+                    <p data-aos="fade-up">
                       BroadcastStore or BroadcastStore.co has an extensive
                       inventory of new & used professional audiovisual equipment
                       available at a discounted price to our customers.
                     </p>
-                    <p>
+                    <p data-aos="fade-up">
                       BroadcastStore.co is the premiere site to list consign, or
                       trade your equipment. Whether rotating out your existing
                       equipment, or clearing out your storage area,
                       BroadcastStore.co can assist you in securing maximum value
                       on your investments.
                     </p>
-                    <p>
+                    <p data-aos="fade-up">
                       Our service department is second to none. We service all
                       makes and models; digital, analog and HD.
                     </p>
-                    <Button className="lrn-more">
+                    <Button className="lrn-more" data-aos="fade-up">
                       <Link to={"#"}>learn More</Link>
                     </Button>
                   </div>
                 </Col>
                 <Col xs={5}>
                   <div className="inner-column">
-                    <img src={cameraabt} />
+                    <img data-aos="flip-left" src={cameraabt} />
                   </div>
                 </Col>
               </Row>
@@ -372,7 +418,17 @@ const Home = () => {
               <div className="ft-pro-head">
                 <Row>
                   <Col xs={6}>
-                    <h2 className="heading">Featured Products</h2>
+                    <span
+                      data-aos="fade-right"
+                      data-aos-offset="300"
+                      data-aos-easing="ease-in-sine"
+                      className="webkit-text"
+                    >
+                      BEST SELLER
+                    </span>
+                    <h2 className="heading" data-aos="fade-up">
+                      Featured Products
+                    </h2>
                   </Col>
                   <Col xs={6}>
                     <div className="button">
@@ -426,127 +482,292 @@ const Home = () => {
           </div>
 
           <div id="tech">
-              <Container>
-             <div className="tech-content">
+           
+              <div className="tech-content">
+                <span
+                  data-aos="fade-right"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                  className="webkit-text"
+                >
+                  TECH SPECS
+                </span>
 
-              <h2 className="heading">Tech Specs</h2>
+                <div data-aos="fade-up">
+                  <h2 className="heading">Tech Specs</h2>
+                </div>
 
-              <div className="tech-spec">
-              <Row>
-                <Col xs={4}>
-                  <div className="tech-inner ze">
-                  <h4>Zoom Extension</h4>
-                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    
+                <Slider {...specification}>
+                  <div>
+                       <div className="tech-spec">
+                  <Row>
+                    <Col xs={4}>
+                      <div className="tech-inner ze">
+                        <h4>Zoom Extension</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                    <Col xs={5}>
+                      <div className="tech-inner line-img"></div>
+                    </Col>
+                    <Col xs={3}>
+                      <div className="tech-inner ar">
+                        <h4>Aperture Range</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={4} className="fr-col">
+                      <div className="tech-inner fr ">
+                        <h4>Focus Ring</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                    <Col xs={5}>
+                      <div className="tech-inner centerimg">
+                        <img src={tech} />
+                      </div>
+                    </Col>
+                    <Col xs={3} className="fs-inner">
+                      <div className="tech-inner fs">
+                        <h4>Filter Size</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <div className="tech-inner af-motr">
+                        <h4>AF Motor Type</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
                   </div>
-                </Col>
-                <Col xs={5}>
-                  <div className="tech-inner line-img">
 
-
+                  <div>
+                       <div className="tech-spec">
+                  <Row>
+                    <Col xs={4}>
+                      <div className="tech-inner ze">
+                        <h4>Zoom Extension</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                    <Col xs={5}>
+                      <div className="tech-inner line-img"></div>
+                    </Col>
+                    <Col xs={3}>
+                      <div className="tech-inner ar">
+                        <h4>Aperture Range</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={4} className="fr-col">
+                      <div className="tech-inner fr ">
+                        <h4>Focus Ring</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                    <Col xs={5}>
+                      <div className="tech-inner centerimg">
+                        <img src={tech} />
+                      </div>
+                    </Col>
+                    <Col xs={3} className="fs-inner">
+                      <div className="tech-inner fs">
+                        <h4>Filter Size</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <div className="tech-inner af-motr">
+                        <h4>AF Motor Type</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
                   </div>
-                </Col>
-                <Col xs={3}>
-                  <div className="tech-inner ar">
-                  <h4>Aperture Range</h4>
-                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
 
+                  <div>
+                       <div className="tech-spec">
+                  <Row>
+                    <Col xs={4}>
+                      <div className="tech-inner ze">
+                        <h4>Zoom Extension</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                    <Col xs={5}>
+                      <div className="tech-inner line-img"></div>
+                    </Col>
+                    <Col xs={3}>
+                      <div className="tech-inner ar">
+                        <h4>Aperture Range</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={4} className="fr-col">
+                      <div className="tech-inner fr ">
+                        <h4>Focus Ring</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                    <Col xs={5}>
+                      <div className="tech-inner centerimg">
+                        <img src={tech} />
+                      </div>
+                    </Col>
+                    <Col xs={3} className="fs-inner">
+                      <div className="tech-inner fs">
+                        <h4>Filter Size</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <div className="tech-inner af-motr">
+                        <h4>AF Motor Type</h4>
+                        <p>
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
                   </div>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={4} className="fr-col">
-                  <div className="tech-inner fr ">
-                  <h4>Focus Ring</h4>
-                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    
-                  </div>
-                </Col>
-                <Col xs={5}>
-                  <div className="tech-inner centerimg">
-                  <img src={tech}/>
+                </Slider>
 
-                  </div>
-                </Col>
-                <Col xs={3} className="fs-inner">
-                  <div className="tech-inner fs">
-                  <h4>Filter Size</h4>
-                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-
-                  </div>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={12}>
-                  <div className="tech-inner af-motr">
-                  <h4>AF Motor Type</h4>
-                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    
-                  </div>
-                </Col>
-                
-              </Row>
-
-
-
+             
               </div>
-
-
-
-             </div>
-
-                
-              </Container>
-
-
+           
           </div>
-
-
-
-
-
 
           <Grid className="partners-sec">
             <Slider {...logos}>
               <Grid className="slide-logo">
-                <img src={logo1} alt="" />
+                <img src={panasonic} alt="" />
               </Grid>
               <Grid className="slide-logo">
-                <img src={logo2} alt="" />
+                <img src={pentax} alt="" />
               </Grid>
               <Grid className="slide-logo">
-                <img src={logo3} alt="" />
+                <img src={nikon} alt="" />
               </Grid>
               <Grid className="slide-logo">
-                <img src={logo4} alt="" />
+                <img src={sonyy} alt="" />
               </Grid>
               <Grid className="slide-logo">
-                <img src={logo5} alt="" />
+                <img src={canon} alt="" />
               </Grid>
               <Grid className="slide-logo">
-                <img src={logo6} alt="" />
+                <img src={fujifilm} alt="" />
               </Grid>
               <Grid className="slide-logo">
-                <img src={logo7} alt="" />
+                <img src={panasonic} alt="" />
               </Grid>
               <Grid className="slide-logo">
-                <img src={logo8} alt="" />
+                <img src={pentax} alt="" />
               </Grid>
               <Grid className="slide-logo">
-                <img src={logo9} alt="" />
+                <img src={nikon} alt="" />
               </Grid>
               <Grid className="slide-logo">
-                <img src={logo1} alt="" />
+                <img src={sonyy} alt="" />
+              </Grid>
+              <Grid className="slide-logo">
+                <img src={canon} alt="" />
+              </Grid>
+              <Grid className="slide-logo">
+                <img src={fujifilm} alt="" />
               </Grid>
             </Slider>
           </Grid>
 
-          <Grid className="ft-products" id="all-pro">
+          <Grid className="ft-products brd-line" id="all-pro">
             <Container>
-            <div className="ft-pro-head">
+              <div className="ft-pro-head">
                 <Row>
                   <Col xs={6}>
-                    <h2 className="heading">Featured Products</h2>
+                    <span
+                      data-aos="fade-right"
+                      data-aos-offset="300"
+                      data-aos-easing="ease-in-sine"
+                      className="webkit-text"
+                    >
+                      PRODUCTS
+                    </span>
+                    <div data-aos="fade-up">
+                      <h2 className="heading">All Products</h2>
+                    </div>
                   </Col>
                   <Col xs={6}>
                     <div className="button">
@@ -560,46 +781,50 @@ const Home = () => {
                 </Row>
               </div>
 
-             
-                <Grid className="allpro-container" container spacing={2}>
-                  {featuredProducts.slice(0, 8).map((product) => (
-                    <Grid item xs={3} key={product.id}>
-                      <Grid className="ftrd-slide">
+              <Grid className="allpro-container" container spacing={2}>
+                {featuredProducts.slice(0, 8).map((product) => (
+                  <Grid item xs={3} key={product.id}>
+                    <Grid className="ftrd-slide">
                       <Grid className="ftrd-pro">
-                    <div class="product">
-                      <h4 class="title">{product.title}</h4>
-                      <p class="sku">SKU# {product.sku}</p>
-                      <div class="pro-image">
-                        <img
-                          src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
-                          alt=""
-                        />
-                      </div>
-                      <p class="short-des">{product.short_desc}</p>
-                      <div class="price-btn">
-                        <p class="price">
-                          Price <span class="price-no">${product.price}</span>
-                        </p>
-                        <Button className="lrn-more cart">
-                          <Link
-                            to={`/${product.slug}`}
-                            onClick={(event) =>
-                              handleProductSelect(product, event)
-                            }
-                          >
-                            learn More
-                          </Link>
-                        </Button>
-                      </div>
-                    </div>
-                  </Grid>
+                        <div class="product">
+                          <h4 class="title">{product.title}</h4>
+                          <p class="sku">SKU# {product.sku}</p>
+                          <div class="pro-image">
+                            <img
+                              src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
+                              alt=""
+                            />
+                          </div>
+                          <p class="short-des">{product.short_desc}</p>
+                          <div class="price-btn">
+                            <p class="price">
+                              Price{" "}
+                              <span class="price-no">${product.price}</span>
+                            </p>
+                            <Button className="lrn-more cart">
+                              <Link
+                                to={`/${product.slug}`}
+                                onClick={(event) =>
+                                  handleProductSelect(product, event)
+                                }
+                              >
+                                learn More
+                              </Link>
+                            </Button>
+                          </div>
+                        </div>
                       </Grid>
                     </Grid>
-                  ))}
-                </Grid>
-              
+                  </Grid>
+                ))}
+              </Grid>
             </Container>
           </Grid>
+
+         
+
+
+
         </>
       )}
 
@@ -660,11 +885,7 @@ const Home = () => {
         </div>
       )}
 
-      {!selectedProduct && (
-        <>
-          
-        </>
-      )}
+      {!selectedProduct && <></>}
     </Grid>
   );
 };

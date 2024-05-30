@@ -1,39 +1,71 @@
 import { Container, Grid, List } from "@mui/material";
 import React from "react";
-import { Typography, Button } from "@mui/material";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { Typography, Button, TabPanel } from "@mui/material";
 import { PiWechatLogoLight } from "react-icons/pi";
-import ftimage1 from "../../assets/images/ftimg1.png"
-import ftimage2 from "../../assets/images/ftimg2.png"
-import ftimage3 from "../../assets/images/ftimg3.png"
-import {Link} from "react-router-dom"
+import ftimage1 from "../../assets/images/ftimg1.png";
+import ftimage2 from "../../assets/images/ftimg2.png";
+import ftimage3 from "../../assets/images/ftimg3.png";
+
+import delivery from "../../assets/images/delivery.png";
+import payment from "../../assets/images/payment.png";
+import support from "../../assets/images/support.png";
+import trust from "../../assets/images/trust.png";
+import paymentmethod from "../../assets/images/paymentmethod.png";
+import mailicon from "../../assets/images/mail.png";
+
+ 
+import { Link } from "react-router-dom";
 const FooterComponent = () => {
   return (
     <Grid>
       <Grid id="footer">
         <Grid id="footer-top">
           <Container>
+            <div className="features">
+              <Row>
+                <Col xs={3}>
+                  <div className="feat-inner">
+                    <img src={delivery} alt="" />
+                    <h4>Fast Delivery</h4>
+                    <p>Delivery order within 24 hours</p>
+                  </div>
+                </Col>
+                <Col xs={3}>
+                  <div className="feat-inner">
+                    <img src={payment} alt="" />
+                    <h4>Secure Payment</h4>
+                    <p>Payment protected by SSL </p>
+                  </div>
+                </Col>
+                <Col xs={3}>
+                  <div className="feat-inner">
+                    <img src={support} alt="" />
+                    <h4>24*7 Support</h4>
+                    <p>Customer service active 24*7 all-over</p>
+                  </div>
+                </Col>
+                <Col xs={3}>
+                  <div className="feat-inner">
+                    <img src={trust} alt="" />
+                    <h4>Trustworthy Service</h4>
+                    <p>Trustworthy & reliable service provider</p>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+
             <Grid container spacing={4}>
               <Grid item xs={3}>
                 <Grid id="ft-clm">
-                  <Typography variant="body1">Contact Us</Typography>
-                  <Grid id="iconBox" mt={2}>
-                    <Grid container spacing={2}>
-                      <Grid item xs={3}>
-                        <PiWechatLogoLight />
-                      </Grid>
-                      <Grid item xs={9}>
-                        <Typography variant="body2">Contact Us</Typography>
-                        <Typography variant="body1">
-                        suzy@thebroadcaststore.co 
-                        
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-
-                  <ul>
+                <h3>Contact Us</h3>
+                   <ul>
                     <li>
-                      <Link to={'/about'}>About BroadcastStore.co</Link>
+                      <Link to={"#"}><img src={mailicon} alt="" />suzy@thebroadcaststore.co</Link>
+                    </li>
+                    <li>
+                      <Link to={"/about"}>About BroadcastStore.co</Link>
                     </li>
                     <li>
                       <Link to={"/locations"}>Locations</Link>
@@ -46,7 +78,7 @@ const FooterComponent = () => {
               </Grid>
               <Grid item xs={3}>
                 <Grid id="ft-clm" className="ft-clm-2">
-                  <Typography variant="body1">Site Links</Typography>
+                  <h3>Site Links</h3>
                   <ul>
                     <li>
                       <Link to={"/"}>Sell Equipment</Link>
@@ -65,7 +97,8 @@ const FooterComponent = () => {
               </Grid>
               <Grid item xs={3}>
                 <Grid id="ft-clm">
-                  <Typography variant="body1">Services</Typography>
+                  
+                  <h3>Services</h3>
                   <ul>
                     <li>
                       <Link to={"/"}>Customer Feedback</Link>
@@ -78,15 +111,14 @@ const FooterComponent = () => {
                     </li>
                     <li>
                       <Link to={"/shipping"}>Shipping Information</Link>
-                      
                     </li>
-                    
                   </ul>
                 </Grid>
               </Grid>
               <Grid item xs={3}>
                 <Grid id="ft-clm">
-                  <Typography variant="body1">Contact</Typography>
+          
+                  <h3>Contact</h3>
                   <ul>
                     <li>
                       <Link to={"/"}>Shop BroadcastStore.co</Link>
@@ -98,30 +130,16 @@ const FooterComponent = () => {
                 </Grid>
               </Grid>
             </Grid>
-          </Container>
-        </Grid>
-        <Grid id="footer-bottom">
-          <Container>
-            <Grid container spacing={4}>
-              <Grid item xs={4}>
-                <Grid id="ft-btm">
-                  <Typography variant="body1">BETALINGSMEtoder</Typography>
-                  <img src={ftimage1} alt="" srcset="" />
-                </Grid>
-              </Grid>
-              <Grid item xs={4}>
-                <Grid id="ft-btm">
-                  <Typography variant="body1">LEVERING</Typography>
-                  <img src={ftimage2} alt="" srcset="" />
-                </Grid>
-              </Grid>
-              <Grid item xs={4}>
-                <Grid id="ft-btm">
-                  <Typography variant="body1">CERTIFICERING</Typography>
-                  <img src={ftimage3} alt="" srcset="" />
-                </Grid>
-              </Grid>
-            </Grid>
+            <div className="copyright">
+              <Row>
+                <Col xs={6}>
+               <p><b>© 2024, Broadcast Store</b></p>
+                </Col>
+                <Col xs={6}>
+                <img src={paymentmethod} alt="" />
+                </Col>
+              </Row>
+            </div>
           </Container>
         </Grid>
       </Grid>

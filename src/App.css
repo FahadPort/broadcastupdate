@@ -37,6 +37,8 @@ button {
   font-size: 18px;
   line-height: 26px;
   margin: 0 15px 0;
+  padding: 10px 10px;
+  text-decoration: none;
 }
 
 
@@ -142,7 +144,30 @@ div#hero img {
 
 /* logo */
 
-
+div#hero-cameras {
+  position: relative;
+}
+div#hero-cameras:before{
+  content: "";
+  background: url("./assets/images/spiral.png");
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 999;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .slider-main {
   min-height: unset;
@@ -161,16 +186,40 @@ div#hero img {
 
 
 /* content */
-.slider-content-wrap{display: flex; flex-direction: column; justify-content: center;height: 100%;}
+.slider-content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
 /* social media */
-.social-icons{display: flex;align-items: center;gap: 16px;}
-.social-icons a{border: 2px solid #fff;border-radius: 50%;width: 45px;height: 45px;display: inline-block;display: flex;justify-content: center;align-items: center;}
-.social-icons img{width: 22px;height: 22px;}
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-icons a {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+}
 
 /* images */
 .slider-images > img.next{
     opacity: 1;   
-    transition:  2s; 
+    transition: 2s; 
     filter: blur(35px); 
     left: 100%; 
     top: 10%;
@@ -469,36 +518,28 @@ h2.heading {
   text-align: right;
 }
 
-.button  .lrn-more a {
+.button .lrn-more a {
   color: #111111 !important;
   font-family: 'Montserrat' !important;
   text-transform: capitalize;
   font-weight: 600 !important;
+  background: transparent !important;
+}
+.button .lrn-more a:before {
+  z-index: -1;
+  border-radius: unset !important;
 }
 
+.button .lrn-more a {transition: all 0.5s;border-radius: unset !important;}
+
+.button .lrn-more a:hover {
+  position: relative;
+  z-index: 999999;
+  color: #fff !important;
+}
 div#feature-products {
   padding: 110px 0 100px;
   position: relative;
-}
-div#feature-products:before {
-  content: "BEST SELLER";
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 270px;
-  color: #424040 !important;
-  text-transform: uppercase;
-  font-family: 'Montserrat';
-  font-weight: bold;
-  -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: #42404017 !important;
-  -webkit-text-fill-color: transparent;
 }
 
 .ft-products h4.title {
@@ -507,7 +548,11 @@ div#feature-products:before {
   font-family: 'Montserrat' !important;
   font-weight: bold !important;
   color: #111111;
-  min-height: 90px;
+  min-height: 60px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .ft-products  p.sku {
@@ -518,12 +563,17 @@ div#feature-products:before {
   font-weight: 600 !important;
 }
 
-.ft-products  p.short-des {
+.ft-products p.short-des {
   color: #383838 !important;
-  font-size: 13px  !important;
-  line-height: 21px  !important;
+  font-size: 13px !important;
+  line-height: 21px !important;
   font-family: 'Montserrat' !important;
   font-weight: 600 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  min-height: 40px;
+  overflow: hidden;
 }
 
 
@@ -576,7 +626,7 @@ div#feature-products:before {
 
 .product {
   margin: 0 15px;
-  min-height: 540px;
+  min-height: 490px;
   padding: 30px;
   border: 3px solid #006BCD;
   border-radius: 0 20px 0 20px;
@@ -592,7 +642,7 @@ div#feature-products:before {
 .ft-products {
   padding-bottom: 70px;
 }
-.ft-products .slick-dots li button:before {
+.ft-products .slick-dots li button:before, div#tech .slick-dots li button:before {
   font-family: 'slick';
   font-size: 6px;
   line-height: 20px;
@@ -608,7 +658,10 @@ div#feature-products:before {
   background: linear-gradient(45deg, #006BCD, #04B4FF);
   opacity: 0.4;
 }
-.ft-products .slick-dots li {
+.ft-products  .slick-dots li.slick-active button:before , div#tech    .slick-dots li.slick-active button:before {
+  opacity: 0.9 !important;
+}
+.ft-products .slick-dots li, div#tech .slick-dots li {
   margin: 0 20px;
 }
 
@@ -624,7 +677,10 @@ div#tech {
   padding: 100px 0;
   position: relative;
 }
-
+.tech-spec {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 div#tech h2 {
   text-align: center;
   position: relative;
@@ -647,24 +703,7 @@ div#tech h2:before {
   padding-top: 100px;
 }
 
-div#tech:before {
-  content: "Tech Specs";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0%;
-  display: flex;
-  justify-content: center;
-  font-size: 270px;
-  color: #424040 !important;
-  text-transform: uppercase;
-  font-family: 'Montserrat';
-  font-weight: bold;
-  -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: #42404017 !important;
-  -webkit-text-fill-color: transparent;
-  line-height: 270px;
-}
+
 .tech-inner h4 {
   font-size: 25px !important;
   line-height: 33px !important;
@@ -851,15 +890,51 @@ div#tech .centerimg img {
 }
 div#all-pro .product {
   margin: unset !important;
-  padding: 20px;
-  min-height: 520px;
+  padding: 40px 20px;
+  min-height: 490px;
 }
 
 .allpro-container h4.title {
   font-size: 16px !important;
   line-height: 24px !important;
-  min-height: 60px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 40px;
 }
+span.webkit-text {
+  display: flex;
+  justify-content: center;
+  font-size: 270px;
+  color: #424040 !important;
+  text-transform: uppercase;
+  font-family: 'Montserrat' !important;
+  font-weight: bold !important;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color:  #42404030 !important;
+  -webkit-text-fill-color: transparent;
+  line-height: 270px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1%;
+  margin: 0 auto !important;
+}
+
+div#all-pro {
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* All Products Section End  */
 
@@ -991,12 +1066,12 @@ div#all-pro .product {
   margin: 0 18px;
 }
 .partners-sec {
-  padding: 70px 0;
+  padding: 20px 0;
   background: linear-gradient(45deg, #2F2F2F, #111111);
 }
 .partners-sec img {
   filter: brightness(0) invert(1);
- 
+  max-width: 200px;
 }
 
 /* All product Section CSS  */
@@ -1013,395 +1088,113 @@ div#all-pro .product {
 
 
 
+/* Footer CSS Start  */
 
-
-
-/* All Product Sec Css Start */
-.all-prod-sec {
-  padding: 20px 0 60px;
-}
-.all-prod-sec .tabcontent {
-  display: none;
-}
-.all-prod-sec .tabcontent.active {
-  display: block;
-}
-.tabcontent {
-  animation: fadeEffect 1s; /* Fading effect takes 1 second */
-}
-div#btn-row .MuiGrid-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+div#footer {
+  background: linear-gradient(312deg, #111111, #2F2F2F);
+  padding: 100px 0 0px 0;
 }
 
-div#btn-row {
-  padding-top: 70px;
-}
-div#navbar nav a {
-  display: block;
-}
-
-.menubar .dropdown-menu a {
-  border-bottom: 1px solid #00000075;
-  padding: 11px 15px;
-  text-decoration: none;
-}
-
-.dropdown-menu {
-  width: 150%;
-}
-
-/* Go from zero to full opacity */
-@keyframes fadeEffect {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.btn-tabs button {
-  border: 1px solid #e4e4e4;
-  color: #0a2540;
-  padding: 10px 25px;
-  border-radius: 30px;
-  background-color: transparent;
-  font-weight: 700 !important;
-  margin-right: 14px;
-  cursor: pointer;
-}
-.btn-tabs button.active {
-  background-color: #00acea;
+div#footer p, div#footer h4, div#footer h3, div#footer ul li a {
   color: #fff;
-  border-color: #00acea;
-}
-.btn-tabs {
-  margin: 0 0 30px;
+  font-family: 'Montserrat' !important;
 }
 
-/* Products Card CSS */
-
-div#pro-cards h2 {
-  font-size: 22px;
-  padding-bottom: 30px;
-  color: #fff;
-}
-
-div#pro-cards p {
-  font-size: 14px;
-  line-height: 22px;
-  padding-bottom: 30px;
-  color: #fff;
-}
-div#pro-cards div#inner-card.yellow h2 {
-  color: #000;
-}
-
-#inner-card.blue .MuiGrid-container,
-#inner-card.d-blue .MuiGrid-container {
-  display: flex;
-  align-items: center;
-}
-
-div#inner-card {
-  padding: 40px;
-  border-radius: 10px;
-  overflow: hidden;
-  height: 340px;
-}
-
-div#inner-card.blue {
-  background-image: url("./assets/images/procard-bg.png") !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: center;
-}
-div#inner-card.blue .image img {
-  height: 270px;
-  position: relative;
-  bottom: -44px;
-}
-
-div#inner-card.blue .image {
-  text-align: end;
-}
-
-div#inner-card.yellow {
-  background: #ffab2d;
-  padding-bottom: unset !important;
-}
-
-div#inner-card.yellow .image img {
-  position: relative;
-  bottom: -5px;
-  height: 218px;
-}
-div#inner-card.yellow {
-  background: #ffab2d;
-  padding-bottom: unset !important;
-  position: relative;
-  overflow: hidden;
-}
-
-div#inner-card.yellow .image-mob img {
-  position: absolute;
-  right: 0;
-  width: 270px;
-  height: 200px;
-  bottom: -20px;
-}
-div#pro-cards {
-  padding-bottom: 50px;
-}
-.arrow-btn a {
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-.arrow-btn svg {
-  background: #fff;
-  color: #000;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px;
-  margin-left: 20px;
-}
-div#inner-card.green {
-  background: #2dff81;
-}
-
-div#inner-card.d-blue {
-  background-image: url("./assets/images/blu-bg.png") !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: center;
-  position: relative;
-}
-div#inner-card.d-blue img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  max-width: 400px;
-}
-
-div#inner-card.d-blue img {
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  max-width: 260px;
-}
-
-div#inner-card.green IMG {
-  max-width: 310px;
-}
-
-div#inner-card.green h2 {
-  color: #0a2540;
-}
-
-div#inner-card.green .arrow-btn a {
-  color: #0a2540;
-}
-.arrow-btn:hover {
-  background: unset !important;
-}
-div#inner-card.yellow .css-mhc70k-MuiGrid-root > .MuiGrid-item {
-  padding-left: unset !important;
-}
-div#inner-card.d-blue h2 {
-  background-size: 400% 400%;
-
-  background-image: linear-gradient(
-    to right,
-    #00fff0 1.79%,
-    #f47aff 49.28%,
-    #fff500 93.9%
-  );
-  -webkit-background-clip: text;
-  animation: text-color-gradient 5s ease infinite;
-  color: transparent;
-}
-
-@keyframes text-color-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-/* NewsLetter Section  */
-
-div#newsletter {
-  margin-bottom: -100px;
-  z-index: 1;
-  position: relative;
-}
-
-div#newsletter .news-con {
-  background: url("./assets/images/news-bg.png");
-  background-repeat: no-repeat;
-}
-
-div#newsletter .news-con {
-  background-size: cover;
-  padding: 50px 50px;
-  max-width: 950px;
-  margin: 0 auto;
-  background-position-x: center;
-}
-
-div#newsletter .news-con h2 {
-  color: #fff;
-  font-size: 32px;
-  line-height: 40px;
-}
-
-div#newsletter .news-con p {
-  color: #fff;
-  padding: 30px 0;
-}
-
-div#newsletter input {
-  border: 2px solid #fff;
-  border-radius: 6px;
-  color: #fff;
-}
-div#newsletter input:active,
-div#newsletter input:focus {
-  border: 2px solid #fff;
-  outline: unset !important;
-}
-div#newsletter .textField span {
-  color: #fff !important;
-}
-
-.submt a {
-  background: #001834;
-  color: #fff;
-  text-transform: capitalize;
-  text-decoration: none;
-  padding: 15px 20px;
-  font-weight: bold;
-  font-size: 14px !important;
-  border-radius: 5px;
-  min-width: 80px;
-}
-div#newsletter label#outlined-basic-label {
-  color: #fff;
-}
-
-/* Footer Section CSS  */
-
-#footer-top {
-  background: #fafbfe;
-  padding-top: 200px;
-  padding-bottom: 80px;
-}
-#footer {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-div#ft-clm ul {
-  margin: unset;
+div#footer ul {
   padding: unset;
+  margin: 20px 0 0;
 }
 
-div#ft-clm ul li {
-  list-style: none;
-  margin: 20px 0;
+div#footer ul li a {
+ text-decoration: none;
+ transition: all 0.5s;
 }
 
-div#ft-clm ul li a {
-  text-decoration: none;
-  font-size: 16px !important;
-  line-height: 24px;
-  color: #0a2540;
-  font-weight: 600;
-}
-
-div#ft-clm p {
-  color: #5e7790;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: bold !important;
-}
-
-div#iconBox {
-  background: #fff;
-  box-shadow: 0px 1.854px 3.21px 0px rgba(0, 0, 0, 0.01),
-    0px 4.456px 7.714px 0px rgba(0, 0, 0, 0.01),
-    0px 8.389px 14.525px 0px rgba(0, 0, 0, 0.01),
-    0px 14.965px 25.91px 0px rgba(0, 0, 0, 0.01),
-    0px 27.991px 48.462px 0px rgba(0, 0, 0, 0.01),
-    0px 67px 116px 0px rgba(0, 0, 0, 0.02);
-  padding: 10px;
-}
-
-div#ft-clm #iconBox p.MuiTypography-body2 {
-  color: #0a2540 !important;
-  text-transform: capitalize;
-}
-
-div#ft-clm #iconBox p.MuiTypography-body1 {
-  text-transform: lowercase;
-  font-weight: 100 !important;
-  font-size: 13px !important;
-  line-height: 22px;
-}
-
-#iconBox svg {
-  font-size: 50px !important;
-  line-height: 48px;
-  color: #2d68ff;
-  background: #f1f5fb;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-#iconBox .MuiGrid-root.MuiGrid-container {
+div#footer  .feat-inner {
+  padding: 30px 15px;
+  background: #2F2F2F;
+  border-radius: 0 10px 0 10px;
+  min-height: 230px;
   display: flex;
-  align-items: center;
-}
-.ft-clm-2 {
-  padding-left: 40px;
-}
-
-/* Footer Bottom CSS  */
-
-div#footer-bottom {
-  background: #001834;
-  padding: 30px 0;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.5s;
+  border: 2px solid #fff0;
 }
 
-div#footer-bottom p {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 500 !important;
-  font-family: "Inter";
-  padding-bottom: 10px;
+.feat-inner p {
+  font-size: 13px;
+  line-height: 21px;
 }
 
-div#footer-bottom img {
-  max-width: 300px;
+div#footer  .feat-inner img {
+  margin-bottom: 20px;
+  max-width: 40px;
+  max-height: 50px;
 }
-#footer-top .MuiContainer-root {
-  position: relative;
-  z-index: 999;
+
+div#footer  .feat-inner h4 {
+  font-size: 20px;
+  line-height: 28px;
 }
+
+div#footer  .features {
+  padding-bottom: 70px;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(45deg, #04B4FF, #006BCD) 1;
+  margin-bottom: 70px;
+}
+
+div#footer h3 {
+  font-size: 25px;
+  line-height: 33px;
+  background: linear-gradient(45deg, #04B4FF, #006BCD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+div#footer ul li {
+  list-style: none;
+  margin: 0 0 15px;
+}
+
+div#ft-clm ul li img {
+  margin: 0 10px 0;
+}
+
+div#footer  .copyright {
+  padding: 30px 0 0;
+  border-top: 2px solid #fff;
+  margin: 50px 0 0;
+}
+
+div#footer  .copyright img {
+  display: block;
+  margin-left: auto;
+}
+
+div#footer  .feat-inner:hover {
+  border-color: #0080d9;
+  transform: scale(1.05);
+}
+
+div#footer ul li a:hover {
+  background: linear-gradient(45deg, #04B4FF, #006BCD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+
+/* Footer CSS End  */
+
+
+
+
+
 /* header CSS  */
 
 .topbar, #navbar {
@@ -1502,49 +1295,9 @@ div#navbar .menubar {
 
 /* Banner Shape CSS  */
 
-.banner {
-  position: relative;
-}
 
-.banner:before {
-  content: "";
-  background: url("./assets/images/shape.png");
-  height: 475px;
-  width: 475px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: contain;
-}
 
-.banner:after {
-  content: "";
-  background: url("./assets/images/shape.png");
-  height: 475px;
-  width: 475px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-position: bottom left;
-  background-size: contain;
-}
-#footer:before {
-  content: "";
-  background: url("./assets/images/footershape.png");
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  z-index: 1;
-  background-repeat: no-repeat;
-  background-position: top right;
-}
+
 div#navbar .btns a {
   color: #fff;
 }
@@ -2061,7 +1814,7 @@ div#form .fields input[type="checkbox"] {
 /* Product Page CSS  */
 
 div#product {
-  padding: 100px 0;
+  padding: 200px 0 100px;
 }
 div#product img {
   width: 100%;

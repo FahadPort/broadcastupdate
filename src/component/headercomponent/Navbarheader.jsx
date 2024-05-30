@@ -2,15 +2,30 @@ import React from 'react';
 import { Navbar, Nav, NavDropdown, Container, Form, FormControl, Button } from 'react-bootstrap';
 import { FaSearch, FaUser, FaShoppingCart } from 'react-icons/fa';
 import ftlogo from "../../assets/images/ftlogo.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
 const Navbarheader = () => {
+  const navigate = useNavigate();
+
+  const handleReload = (e) => {
+    navigate('/');
+    // if (location.pathname === '/') {
+    e.preventDefault();
+    window.location.reload();
+    // }
+  };
+
+
+
+
   return (
   <>
       <Navbar  expand="lg" className="py-3 navbarenew">
       <Container className="d-flex justify-content-between">
         <div style={{ width: '40%' }}>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
+          <Link to="/" onClick={handleReload}>Home</Link>
+          <Link to="#">About Us</Link>
             <Nav.Link href="#products">Products</Nav.Link>
             <Nav.Link href="#contact">Contact</Nav.Link>
           </Nav>
