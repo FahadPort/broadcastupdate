@@ -658,6 +658,47 @@ div#feature-products {
   background: linear-gradient(45deg, #006BCD, #04B4FF);
   opacity: 0.4;
 }
+.tech-content {
+  position: relative;
+  z-index: 99;
+}
+div#tech .svg-bg svg {
+  opacity: 0.3;
+}
+
+div#tech h2 {
+  color: #fff !important;
+}
+
+span.webkit-text {
+  opacity: 1;
+}
+div#tech  span.webkit-text {
+  display: flex;
+  justify-content: center;
+  font-size: 270px;
+  color: #e9e9e9 !important;
+  text-transform: uppercase;
+  font-family: 'Montserrat' !important;
+  font-weight: bold !important;
+  -webkit-text-stroke: 3px;
+  -webkit-text-stroke-color: #424040a3 !important;
+  -webkit-text-fill-color: transparent;
+  line-height: 270px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1%;
+  margin: 0 auto !important;
+}
+div#tech {
+  background: #000;
+  overflow: hidden;
+}
+
+div#tech p, div#tech h4 {
+  color: #fff;
+}
 .ft-products  .slick-dots li.slick-active button:before , div#tech    .slick-dots li.slick-active button:before {
   opacity: 0.9 !important;
 }
@@ -1091,7 +1132,77 @@ div#all-pro {
 }
 div#all-pro .product {
   margin: unset !important;
+  background: #fff;
 }
+/* SVg CSS Start  */
+
+
+
+.svg-bg  svg {
+  background-color: transparent !important;
+  height: 25%;
+  width: 100%;
+  opacity: 100%;
+}
+
+
+.svg-bg  .path {
+  animation: draw 20s infinite;
+  animation-timing-function: linear;
+}
+
+
+.svg-bg  .path-2 {
+  animation: draw 20s infinite;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes draw {
+  0% {
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}
+
+
+.allpro-container {
+    position: relative;
+    z-index: 9;
+}
+
+.lofftie {
+    display: none;
+}
+
+.svg-bg {
+    position: absolute;
+    bottom: -9%;
+    left: 0%;
+}
+
+div#all-pro {
+    overflow: hidden;
+}
+
+g#paths {
+  stroke: #0097e9 !important;
+  stroke-width: 5px;
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: butt;
+  stroke-opacity: 1;
+  stroke-dasharray: 30, 150;
+  stroke-dashoffset: 2000;
+  fill-rule: evenodd;
+}
+
+
+/* SVg CSS End  */
+
+
 
 /* All product Section End  */
 
