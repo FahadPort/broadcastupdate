@@ -66,6 +66,7 @@ import nikon from "../assets/images/nikon.png";
 import sonyy from "../assets/images/sonyy.png";
 import canon from "../assets/images/canon.png";
 import fujifilm from "../assets/images/fujifilm.png";
+import OpenerLoading from "../assets/images/OpenerLoading.gif";
 
 // icons
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -818,6 +819,10 @@ const Home = () => {
                   </Grid>
                 ))}
               </Grid>
+              <div className="lofftie">
+              <img src={OpenerLoading} alt="" />
+              
+                </div>
             </Container>
           </Grid>
 
