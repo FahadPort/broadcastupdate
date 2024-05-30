@@ -1077,8 +1077,18 @@ div#all-pro {
 /* All product Section CSS  */
 div#all-pro {
   padding: 130px 0;
+  position: relative;
+}
+.lofftie {
+  position: absolute;
+  left: -10%;
+  bottom: -10%;
+  z-index: 1;
 }
 
+.lofftie img {
+  max-height: 650px !important;
+}
 div#all-pro .product {
   margin: unset !important;
 }
