@@ -2278,6 +2278,21 @@ strong.pric-title {
 	display: flex;
 }
 
+@keyframes scaleAnimation {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.1);
+	}
+}
+
+#abt-text-about .about-img:hover {
+	animation-name: scaleAnimation;
+	animation-duration: 5s;
+	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 #abt-text-about .abt-des {
 	width: 80%;
 	margin: 0px auto;

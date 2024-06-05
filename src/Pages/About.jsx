@@ -103,6 +103,7 @@ export default function About() {
 									<img
 										src={aboutCameraImg}
 										alt=""
+										className="about-img"
 									/>
 								</div>
 							</Col>
