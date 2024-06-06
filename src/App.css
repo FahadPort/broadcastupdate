@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 body {
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
@@ -46,7 +51,7 @@ a#basic-nav-dropdown {
 }
 
 .navbarenew a.navbar-brand img {
-	width: 200px;
+	width: 250px;
 	height: 78px;
 }
 
@@ -2201,9 +2206,10 @@ strong.pric-title {
 }
 
 /* product page */
-.product-bannerText {
-	background: url("./assets/images/productTextImg.png");
+.product-innerban {
+	background: url("./assets/images/contactBgImg.png");
 	width: 100%;
+	height: 100vh;
 	background-position: center;
 	background-size: cover;
 	display: flex;
@@ -2211,6 +2217,184 @@ strong.pric-title {
 	align-items: center;
 	justify-content: center;
 }
+.product-bannerText {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.product-bannerText .product-heading {
+	position: absolute;
+	color: #111;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 126.417px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	text-transform: uppercase;
+}
+.product-tabs {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+	margin-top: 50px;
+}
+.product-tabs .box-1 {
+	width: 220px;
+	cursor: pointer;
+	height: 60px;
+	flex-shrink: 0;
+	border-radius: 0px 15px;
+	border: 3px solid #04b4ff;
+	display: flex;
+	align-items: center;
+	color: #111;
+	justify-content: center;
+}
+.product-tabs .box-1 .box-1-title {
+	margin-top: 10px;
+
+	font-family: Montserrat;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+}
+
+product-tabs .box-2 {
+	width: 220px;
+	cursor: pointer;
+	height: 60px;
+	flex-shrink: 0;
+	border-radius: 0px 15px;
+	background: linear-gradient(93deg, #04b4ff -1.47%, #006bcd 101.31%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.product-tabs .box-1:hover {
+	color: #f5f2f2;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 20px;
+	background: linear-gradient(93deg, #04b4ff -1.47%, #006bcd 101.31%);
+	font-style: normal;
+	font-weight: 600;
+	line-height: 30px;
+	border: none;
+	outline: none;
+}
+.product-tabs .active {
+	color: #f5f2f2;
+	width: 220px;
+	cursor: pointer;
+	height: 60px;
+	border-radius: 0px 15px;
+	background: linear-gradient(93deg, #04b4ff -1.47%, #006bcd 101.31%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	outline: none;
+}
+
+.category {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.wrapper {
+	padding: 35px;
+	position: relative;
+	width: 70%;
+	overflow-x: hidden;
+	background: #fff;
+	border-radius: 13px;
+}
+.wrapper .icon {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 120px;
+	display: flex;
+	align-items: center;
+	background-color: #04b4ff;
+}
+.icon:first-child {
+	left: 0;
+	display: none;
+	cursor: pointer;
+	background: linear-gradient(90deg, #fff 70%, transparent);
+}
+.icon:last-child {
+	right: 0;
+	justify-content: flex-end;
+	cursor: pointer;
+	background: linear-gradient(-90deg, #fff 70%, transparent);
+}
+.icon .i {
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 45px;
+	border-radius: 50%;
+	background-color: white;
+	border: 1px solid #04b4ff;
+}
+.icon:first-child i {
+	margin-left: 15px;
+}
+.icon:last-child i {
+	margin-right: 15px;
+}
+.wrapper .tabs-box {
+	display: flex;
+	gap: 12px;
+	list-style: none;
+	margin: 0 !important;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	transition: all 0.3s linear;
+}
+.tabs-box.dragging {
+	scroll-behavior: auto;
+	cursor: grab;
+}
+.tabs-box .tab {
+	cursor: pointer;
+	white-space: nowrap;
+	background: white;
+	padding: 13px 20px;
+	border-radius: 30px;
+	border: 1px solid #04b4ff;
+	color: #111;
+	font-family: Montserrat;
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 150%;
+	letter-spacing: 0.34px;
+	transition: all 0.3s linear;
+}
+.tabs-box .tab:hover {
+	background: linear-gradient(93deg, #04b4ff -1.47%, #006bcd 101.31%);
+	color: white;
+}
+.tabs-box.dragging .tab {
+	user-select: none;
+	pointer-events: none;
+}
+.tabs-box .tab.active {
+	color: #fff;
+	background: linear-gradient(93deg, #04b4ff -1.47%, #006bcd 101.31%);
+}
+
 /* product page end */
 
 /* About Page */
