@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "../Pages/Home";
+import Product from "../Pages/Product";
 import About from "../Pages/About";
 import SearchResult from "../Pages/SearchResult";
 import Contact from "../Pages/Contact";
@@ -1898,6 +1899,10 @@ const BroadRoutes = () => {
 			<Route
 				path="/SonyDVWA500"
 				element={<SonyDVWA500 />}
+			/>
+			<Route
+				path="/Product"
+				element={<Product />}
 			/>
 		</Routes>
 	);
