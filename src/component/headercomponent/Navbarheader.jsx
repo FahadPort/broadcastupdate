@@ -9,7 +9,7 @@ import {
 	Button,
 } from "react-bootstrap";
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
-import ftlogo from "../../assets/images/ftlogo.png";
+import thebroadcastlogo from "../../assets/images/thebroadcastlogo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbarheader = () => {
@@ -46,9 +46,7 @@ const Navbarheader = () => {
 						style={{ width: "20%" }}>
 						<Navbar.Brand href="/">
 							<img
-								src={ftlogo}
-								width="100"
-								height="30"
+								src={thebroadcastlogo}
 								className="d-inline-block align-top"
 								alt="Logo"
 							/>
