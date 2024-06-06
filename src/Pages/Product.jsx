@@ -242,7 +242,7 @@ export default function Product() {
 							"Tape Cleaners",
 						].map((tab, index) => (
 							<li
-								className={`tab ${index === 1 ? "active" : ""}`}
+								className={`tab ${index === 0 ? "active" : ""}`}
 								key={index}
 								onClick={() => handleTabClick(index)}>
 								{tab}
