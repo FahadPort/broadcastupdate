@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Grid, Container } from "@mui/material";
+import { Grid, Container, Button } from "@mui/material";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { TbLocationExclamation } from "react-icons/tb";
@@ -8,6 +8,8 @@ import { GiCardPickup } from "react-icons/gi";
 import { GrContactInfo } from "react-icons/gr";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Contact = () => {
 	useEffect(() => {
@@ -27,8 +29,10 @@ const Contact = () => {
 				<div className="socials">
 					<div className="box1">
 						<div className="icon">
-							Phone # <br />
-							747-609-5599
+							<a href="tel:7476095599">
+								Phone # <br />
+								747-609-5599
+							</a>
 						</div>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -60,8 +64,10 @@ const Contact = () => {
 					</div>
 					<div className="box2">
 						<div className="icon">
-							Location <br />
-							15500 W Telegraph Rd, Unit <br /> C26 Santa Paula, CA 93060
+							<a href="https://www.google.com/maps/search/?api=1&query=15500+W+Telegraph+Rd,+Unit+C26,+Santa+Paula,+CA+93060">
+								Location <br />
+								15500 W Telegraph Rd, Unit <br /> C26 Santa Paula, CA 93060
+							</a>
 						</div>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +89,10 @@ const Contact = () => {
 					</div>
 					<div className="box3">
 						<div className="icon">
-							Email Us <br />
-							suzy@thebroadcaststore.co
+							<a href="mailto:suzy@thebroadcaststore.co">
+								Email Us <br />
+								suzy@thebroadcaststore.co
+							</a>
 						</div>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -198,18 +206,7 @@ const Contact = () => {
 											value="Send"
 											className="contact-theme-btn"
 										/>
-										<svg
-											className="contact-arrow"
-											xmlns="http://www.w3.org/2000/svg"
-											width="33"
-											height="33"
-											viewBox="0 0 33 33"
-											fill="#FCFCFC">
-											<path
-												d="M31.1555 16.9426L31.6949 17.4821C31.838 17.339 31.9184 17.145 31.9184 16.9426C31.9184 16.7403 31.838 16.5463 31.6949 16.4032L31.1555 16.9426ZM26.8401 12.6272L27.3795 12.0878C27.2729 11.9808 27.1369 11.9078 26.9887 11.8782C26.8406 11.8486 26.687 11.8636 26.5474 11.9214C26.4078 11.9791 26.2885 12.0771 26.2046 12.2027C26.1208 12.3284 26.0761 12.4761 26.0763 12.6272L26.8401 12.6272ZM26.8401 21.258L26.0763 21.258C26.0761 21.4091 26.1208 21.5569 26.2046 21.6825C26.2885 21.8082 26.4078 21.9061 26.5474 21.9639C26.687 22.0217 26.8406 22.0367 26.9887 22.0071C27.1369 21.9774 27.2729 21.9045 27.3795 21.7975L26.8401 21.258ZM26.8401 16.1788L0.947591 16.1788V17.7065L26.8401 17.7065V16.1788ZM31.6949 16.4032L27.3795 12.0878L26.3007 13.1666L30.6161 17.4821L31.6949 16.4032ZM26.0763 12.6272V21.258L27.6039 21.258V12.6272L26.0763 12.6272ZM27.3795 21.7975L31.6949 17.4821L30.6161 16.4032L26.3007 20.7186L27.3795 21.7975Z"
-												fill="#FCFCFC"
-											/>
-										</svg>
+										<FaArrowRightLong className="contact-arrow" />
 									</div>
 								</div>
 							</Col>

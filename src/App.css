@@ -1627,7 +1627,7 @@ div#abt-text {
 .contact-theme-btn {
 	color: #fcfcfc;
 	font-family: Montserrat;
-	font-size: 20px;
+	font-size: 24px;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 150%; /* 30px */
@@ -1741,13 +1741,23 @@ div#form {
 
 .socials .box2 .icon {
 	position: absolute;
-	color: #f5f2f2;
 	text-align: center;
 	font-family: Montserrat;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 150%; /* 30px */
+}
+
+.socials .box2 .icon a {
+	color: white;
+	text-decoration: none;
+}
+
+.socials .box1 .icon a,
+.socials .box3 .icon a {
+	color: #021a36;
+	text-decoration: none;
 }
 
 .socials .box3 {
@@ -1801,7 +1811,7 @@ div#form .fields label {
 	font-style: normal;
 	font-weight: 600;
 	line-height: 150%; /* 30px */
-	background: linear-gradient(93deg, #04b4ff -1.47%, #006bcd 101.31%);
+	background-color: #001834;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
