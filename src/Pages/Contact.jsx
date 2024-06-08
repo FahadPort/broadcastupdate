@@ -10,6 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
+import productTextImg from "../../src/assets/images/contactUsImg.png";
 
 const Contact = () => {
 	useEffect(() => {
@@ -19,16 +20,21 @@ const Contact = () => {
 	return (
 		<Grid>
 			<div className="innerban-contact">
-				<div className="bannerText-Contact">
+				<div className="product-bannerText">
+					<img
+						src={productTextImg}
+						alt="product-bannerText-Img"
+						className="product-bannerText-Img"
+					/>
 					<h1
-						className="heading"
+						class="product-heading aos-init aos-animate"
 						data-aos="fade-up">
 						Contact Us
 					</h1>
 				</div>
 				<div className="socials">
 					<div className="box1">
-						<div className="icon">
+						<div className="socials-icon">
 							<a href="tel:7476095599">
 								Phone # <br />
 								747-609-5599
@@ -63,7 +69,7 @@ const Contact = () => {
 						</svg>
 					</div>
 					<div className="box2">
-						<div className="icon">
+						<div className="socials-icon">
 							<a href="https://www.google.com/maps/search/?api=1&query=15500+W+Telegraph+Rd,+Unit+C26,+Santa+Paula,+CA+93060">
 								Location <br />
 								15500 W Telegraph Rd, Unit <br /> C26 Santa Paula, CA 93060
@@ -88,7 +94,7 @@ const Contact = () => {
 						</svg>
 					</div>
 					<div className="box3">
-						<div className="icon">
+						<div className="socials-icon">
 							<a href="mailto:suzy@thebroadcaststore.co">
 								Email Us <br />
 								suzy@thebroadcaststore.co
@@ -108,7 +114,7 @@ const Contact = () => {
 						</svg>
 					</div>
 					<div className="box4">
-						<div className="icon">
+						<div className="socials-icon">
 							Note <br />
 							By Appointments Only
 						</div>
@@ -136,7 +142,7 @@ const Contact = () => {
 								<div
 									className="text-cn"
 									data-aos="fade-up">
-									<h3 className="sec-head">Get in Touch</h3>
+									<h3 className="sec-head get-in-touch">Get in Touch</h3>
 								</div>
 							</Col>
 						</Row>
