@@ -474,6 +474,7 @@ div#hero-cameras:before {
 		height: 100%;
 		padding-top: 80px;
 		padding-bottom: 20px;
+		padding-left: 0px !important;
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -957,6 +958,7 @@ div#tech span.webkit-text {
 	position: absolute;
 	left: 0;
 	right: 0;
+
 	top: 1%;
 	margin: 0 auto !important;
 }
@@ -1411,12 +1413,6 @@ div#all-pro .product {
 
 .lofftie {
 	display: none;
-}
-
-.svg-bg {
-	position: absolute;
-	bottom: -9%;
-	left: 0%;
 }
 
 div#all-pro {
@@ -2529,12 +2525,92 @@ product-tabs .box-2 {
 	outline: none;
 }
 
+.main-carousel {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	transition: all 0.5s ease-in-out;
+}
+
+.main-carousel .carousel-container {
+	width: 100%;
+	display: flex;
+	transition: all 0.5s ease-in-out;
+}
+
+.container-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.main-carousel .carousel-icon {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+}
+.carousel-icon .prev {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
+	background-color: #10101083;
+	color: #fff;
+	outline: none;
+	border: none;
+}
+
+.carousel-icon .prev-icon:hover {
+	transition: all 0.5s ease-in-out;
+	transform: translateX(-5px);
+}
+.carousel-icon .next-icon:hover {
+	transition: all 0.5s ease-in-out;
+	transform: translateX(5px);
+}
+.carousel-icon .next {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #10101083;
+	color: #fff;
+	border-radius: 100%;
+	outline: none;
+	border: none;
+}
+.main-carousel .dots {
+	position: absolute;
+	bottom: 16px;
+	right: 0px;
+	left: 0px;
+}
+
+.main-carousel .dots-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+}
+.main-carousel .dots-container,
+btn {
+	transition: all;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+}
 .category {
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	margin-top: 80px;
 }
 .wrapper {
 	padding: 35px;
@@ -2585,6 +2661,7 @@ product-tabs .box-2 {
 	display: flex;
 	gap: 12px;
 	list-style: none;
+	padding: 0 !important;
 	margin: 0 !important;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
@@ -3244,6 +3321,7 @@ product-tabs .box-2 {
 		height: 100%;
 		padding-top: 80px;
 		padding-bottom: 20px;
+		padding-left: 0px !important;
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -3360,4 +3438,58 @@ product-tabs .box-2 {
 }
 
 @media only screen and (min-width: 300px) and (max-width: 519px) {
+}
+
+.products-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+	background-color: white;
+	margin-top: 100px;
+}
+.products-container .ftrd-pro {
+	width: 272px;
+}
+
+.svg-bg {
+	position: absolute;
+	bottom: -9%;
+	left: 0%;
+	z-index: -1;
+}
+
+@media only screen and (max-width: 400px) {
+	.products-container .ftrd-pro {
+		width: 100%;
+	}
+	.product-tabs {
+		flex-direction: column;
+	}
+	.main-carousel .carousel-container {
+		width: 100%;
+		height: 100%;
+	}
+	.wrapper {
+		width: 100%;
+		padding: 20px;
+	}
+	.products-heading {
+		flex-direction: column;
+		align-items: center;
+	}
+	.container-img {
+		object-fit: contain;
+	}
+	.products-heading .products-bgtext {
+		display: none;
+	}
+	.button-container {
+		width: 100% !important;
+		text-align: left !important;
+	}
+	.button-container .button {
+		text-align: left !important;
+	}
 }
