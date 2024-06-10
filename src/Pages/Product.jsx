@@ -10,6 +10,12 @@ import OpenerLoading from "../assets/images/OpenerLoading.gif";
 import axios from "axios";
 import Aos from "aos";
 import productTextImg from "../assets/images/productTextImg.png";
+import Carousel from "../component/Slider";
+
+import sliderImg1 from "../assets/images/carousel1.png";
+import sliderImg2 from "../assets/images/carousel2.png";
+import sliderImg3 from "../assets/images/carousel5.png";
+import sliderImg4 from "../assets/images/carousel4.png";
 
 export default function Product() {
 	const [allProducts, setAllProducts] = useState(true);
@@ -153,22 +159,32 @@ export default function Product() {
 		setTopBrands(false);
 		setTopModals(true);
 	};
+	const imgItem = [
+		{
+			id: 1,
+			src: sliderImg1,
+		},
+		{
+			id: 2,
+			src: sliderImg2,
+		},
+		{
+			id: 3,
+			src: sliderImg3,
+		},
+		{
+			id: 4,
+			src: sliderImg4,
+		},
+	];
 	return (
 		<>
-			<div className="product-innerban">
-				<div className="product-bannerText">
-					<img
-						src={productTextImg}
-						alt="product-bannerText-Img"
-						className="product-bannerText-Img"
-					/>
-					<h1
-						class="product-heading aos-init aos-animate"
-						data-aos="fade-up">
-						Products
-					</h1>
-				</div>
-				<p className="breadcum">Home . Product</p>
+			<div>
+				<Carousel
+					slides={imgItem}
+					autoSlide={true}
+					autoSlideInterval={5000}
+				/>
 				<div className="product-tabs">
 					<div
 						className="box-1"
@@ -265,13 +281,13 @@ export default function Product() {
 				id="all-pro">
 				<Container>
 					<div className="ft-pro-head">
-						<Row>
-							<Col xs={6}>
+						<Row className="products-heading">
+							<Col>
 								<span
 									data-aos="fade-right"
 									data-aos-offset="300"
 									data-aos-easing="ease-in-sine"
-									className="webkit-text">
+									className="webkit-text products-bgtext">
 									PRODUCTS
 								</span>
 								<div data-aos="fade-up">
@@ -280,7 +296,9 @@ export default function Product() {
 									{topModals && <h2 className="heading">Top Modals</h2>}
 								</div>
 							</Col>
-							<Col xs={6}>
+							<Col
+								xs={6}
+								className="button-container">
 								<div className="button">
 									<Button className="lrn-more">
 										<Link to={"#"}>
@@ -295,17 +313,11 @@ export default function Product() {
 					{/* all products */}
 					{allProducts && (
 						<>
-							<Grid
-								className="allpro-container"
-								container
-								spacing={2}>
+							<div className="products-container">
 								{featuredProducts.slice(0, 8).map((product) => (
-									<Grid
-										item
-										xs={3}
-										key={product.id}>
-										<Grid className="ftrd-slide">
-											<Grid className="ftrd-pro">
+									<div key={product.id}>
+										<div className="ftrd-slide">
+											<div className="ftrd-pro">
 												<div class="product">
 													<h4 class="title">{product.title}</h4>
 													<p class="sku">SKU# {product.sku}</p>
@@ -332,11 +344,11 @@ export default function Product() {
 														</Button>
 													</div>
 												</div>
-											</Grid>
-										</Grid>
-									</Grid>
+											</div>
+										</div>
+									</div>
 								))}
-							</Grid>
+							</div>
 							<div className="lofftie">
 								<img
 									src={OpenerLoading}
@@ -4236,17 +4248,11 @@ export default function Product() {
 					{/* top brands */}
 					{topBrands && (
 						<>
-							<Grid
-								className="allpro-container"
-								container
-								spacing={2}>
+							<div className="products-container">
 								{featuredProducts.slice(0, 8).map((product) => (
-									<Grid
-										item
-										xs={3}
-										key={product.id}>
-										<Grid className="ftrd-slide">
-											<Grid className="ftrd-pro">
+									<div key={product.id}>
+										<div className="ftrd-slide">
+											<div className="ftrd-pro">
 												<div class="product">
 													<h4 class="title">{product.title}</h4>
 													<p class="sku">SKU# {product.sku}</p>
@@ -4273,11 +4279,11 @@ export default function Product() {
 														</Button>
 													</div>
 												</div>
-											</Grid>
-										</Grid>
-									</Grid>
+											</div>
+										</div>
+									</div>
 								))}
-							</Grid>
+							</div>
 							<div className="lofftie">
 								<img
 									src={OpenerLoading}
@@ -8176,17 +8182,11 @@ export default function Product() {
 					{/* top modals */}
 					{topModals && (
 						<>
-							<Grid
-								className="allpro-container"
-								container
-								spacing={2}>
+							<div className="products-container">
 								{featuredProducts.slice(0, 8).map((product) => (
-									<Grid
-										item
-										xs={3}
-										key={product.id}>
-										<Grid className="ftrd-slide">
-											<Grid className="ftrd-pro">
+									<div key={product.id}>
+										<div className="ftrd-slide">
+											<div className="ftrd-pro">
 												<div class="product">
 													<h4 class="title">{product.title}</h4>
 													<p class="sku">SKU# {product.sku}</p>
@@ -8213,11 +8213,11 @@ export default function Product() {
 														</Button>
 													</div>
 												</div>
-											</Grid>
-										</Grid>
-									</Grid>
+											</div>
+										</div>
+									</div>
 								))}
-							</Grid>
+							</div>
 							<div className="lofftie">
 								<img
 									src={OpenerLoading}
