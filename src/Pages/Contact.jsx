@@ -20,14 +20,14 @@ const Contact = () => {
 	return (
 		<Grid>
 			<div className="innerban-contact">
-				<div className="product-bannerText">
+				<div className="contact-bannerText">
 					<img
 						src={productTextImg}
 						alt="product-bannerText-Img"
 						className="product-bannerText-Img"
 					/>
 					<h1
-						class="product-heading aos-init aos-animate"
+						class="contact-heading aos-init aos-animate"
 						data-aos="fade-up">
 						Contact Us
 					</h1>
