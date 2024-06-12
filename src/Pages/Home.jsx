@@ -509,8 +509,10 @@ const Home = () => {
 							<Slider {...specification}>
 								<div>
 									<div className="tech-spec">
-										<Row>
-											<Col xs={4}>
+										<Row className="tech-space-col">
+											<Col
+												xs={4}
+												className="tech-space-col-1">
 												<div className="tech-inner ze">
 													<h4>Zoom Extension</h4>
 													<p>
@@ -520,10 +522,14 @@ const Home = () => {
 													</p>
 												</div>
 											</Col>
-											<Col xs={5}>
+											<Col
+												xs={5}
+												className="tech-space-col-2">
 												<div className="tech-inner line-img"></div>
 											</Col>
-											<Col xs={3}>
+											<Col
+												xs={3}
+												className="tech-space-col-3">
 												<div className="tech-inner ar">
 													<h4>Aperture Range</h4>
 													<p>
@@ -534,10 +540,10 @@ const Home = () => {
 												</div>
 											</Col>
 										</Row>
-										<Row>
+										<Row classname="tech-space-col">
 											<Col
 												xs={4}
-												className="fr-col">
+												className="fr-col tech-space-col-1">
 												<div className="tech-inner fr ">
 													<h4>Focus Ring</h4>
 													<p>
@@ -547,14 +553,97 @@ const Home = () => {
 													</p>
 												</div>
 											</Col>
-											<Col xs={5}>
+											<Col
+												xs={5}
+												className="tech-space-col-2">
 												<div className="tech-inner centerimg">
 													<img src={tech} />
 												</div>
 											</Col>
 											<Col
 												xs={3}
-												className="fs-inner">
+												className="fs-inner tech-space-col-3">
+												<div className="tech-inner fs">
+													<h4>Filter Size</h4>
+													<p>
+														It is a long established fact that a reader will be
+														distracted by the readable content of a page when
+														looking at its layout.
+													</p>
+												</div>
+											</Col>
+										</Row>
+										<Row className="tech-space-col">
+											<Col xs={12}>
+												<div className="tech-inner af-motr">
+													<h4>AF Motor Type</h4>
+													<p>
+														It is a long established fact that a reader will be
+														distracted by the readable content of a page when
+														looking at its layout.
+													</p>
+												</div>
+											</Col>
+										</Row>
+									</div>
+								</div>
+
+								<div>
+									<div className="tech-spec">
+										<Row className="tech-space-col">
+											<Col
+												xs={4}
+												className="tech-space-col-1">
+												<div className="tech-inner ze">
+													<h4>Zoom Extension</h4>
+													<p>
+														It is a long established fact that a reader will be
+														distracted by the readable content of a page when
+														looking at its layout.
+													</p>
+												</div>
+											</Col>
+											<Col
+												xs={5}
+												className="tech-space-col-2">
+												<div className="tech-inner line-img"></div>
+											</Col>
+											<Col
+												xs={3}
+												className="tech-space-col-3">
+												<div className="tech-inner ar">
+													<h4>Aperture Range</h4>
+													<p>
+														It is a long established fact that a reader will be
+														distracted by the readable content of a page when
+														looking at its layout.
+													</p>
+												</div>
+											</Col>
+										</Row>
+										<Row className="tech-space-col">
+											<Col
+												xs={4}
+												className="fr-col tech-space-col-1">
+												<div className="tech-inner fr ">
+													<h4>Focus Ring</h4>
+													<p>
+														It is a long established fact that a reader will be
+														distracted by the readable content of a page when
+														looking at its layout.
+													</p>
+												</div>
+											</Col>
+											<Col
+												xs={5}
+												className="tech-space-col-2">
+												<div className="tech-inner centerimg">
+													<img src={tech} />
+												</div>
+											</Col>
+											<Col
+												xs={3}
+												className="fs-inner tech-space-col-3">
 												<div className="tech-inner fs">
 													<h4>Filter Size</h4>
 													<p>
@@ -582,8 +671,10 @@ const Home = () => {
 
 								<div>
 									<div className="tech-spec">
-										<Row>
-											<Col xs={4}>
+										<Row className="tech-space-col">
+											<Col
+												xs={4}
+												className="tech-space-col-1">
 												<div className="tech-inner ze">
 													<h4>Zoom Extension</h4>
 													<p>
@@ -593,10 +684,15 @@ const Home = () => {
 													</p>
 												</div>
 											</Col>
-											<Col xs={5}>
+											<Col
+												xs={5}
+												className="tech-space-col-2">
 												<div className="tech-inner line-img"></div>
 											</Col>
-											<Col xs={3}>
+											<Col
+												xs={3}
+												classname="tech-space-col-3"
+												id="tech-space-col-3">
 												<div className="tech-inner ar">
 													<h4>Aperture Range</h4>
 													<p>
@@ -607,10 +703,10 @@ const Home = () => {
 												</div>
 											</Col>
 										</Row>
-										<Row>
+										<Row className="tech-space-col">
 											<Col
 												xs={4}
-												className="fr-col">
+												className="fr-col tech-space-col-1">
 												<div className="tech-inner fr ">
 													<h4>Focus Ring</h4>
 													<p>
@@ -620,87 +716,16 @@ const Home = () => {
 													</p>
 												</div>
 											</Col>
-											<Col xs={5}>
+											<Col
+												xs={5}
+												className="tech-space-col-2">
 												<div className="tech-inner centerimg">
 													<img src={tech} />
 												</div>
 											</Col>
 											<Col
 												xs={3}
-												className="fs-inner">
-												<div className="tech-inner fs">
-													<h4>Filter Size</h4>
-													<p>
-														It is a long established fact that a reader will be
-														distracted by the readable content of a page when
-														looking at its layout.
-													</p>
-												</div>
-											</Col>
-										</Row>
-										<Row>
-											<Col xs={12}>
-												<div className="tech-inner af-motr">
-													<h4>AF Motor Type</h4>
-													<p>
-														It is a long established fact that a reader will be
-														distracted by the readable content of a page when
-														looking at its layout.
-													</p>
-												</div>
-											</Col>
-										</Row>
-									</div>
-								</div>
-
-								<div>
-									<div className="tech-spec">
-										<Row>
-											<Col xs={4}>
-												<div className="tech-inner ze">
-													<h4>Zoom Extension</h4>
-													<p>
-														It is a long established fact that a reader will be
-														distracted by the readable content of a page when
-														looking at its layout.
-													</p>
-												</div>
-											</Col>
-											<Col xs={5}>
-												<div className="tech-inner line-img"></div>
-											</Col>
-											<Col xs={3}>
-												<div className="tech-inner ar">
-													<h4>Aperture Range</h4>
-													<p>
-														It is a long established fact that a reader will be
-														distracted by the readable content of a page when
-														looking at its layout.
-													</p>
-												</div>
-											</Col>
-										</Row>
-										<Row>
-											<Col
-												xs={4}
-												className="fr-col">
-												<div className="tech-inner fr ">
-													<h4>Focus Ring</h4>
-													<p>
-														It is a long established fact that a reader will be
-														distracted by the readable content of a page when
-														looking at its layout.
-													</p>
-												</div>
-											</Col>
-											<Col xs={5}>
-												<div className="tech-inner centerimg">
-													<img src={tech} />
-												</div>
-											</Col>
-											<Col
-												xs={3}
-												className="fs-inner">
+												className="fs-inner tech-space-col-3">
 												<div className="tech-inner fs">
 													<h4>Filter Size</h4>
 													<p>
