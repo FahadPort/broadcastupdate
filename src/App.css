@@ -653,7 +653,6 @@ div#navbar .navbar-collapse {
 /* About Section CSS  */
 
 div#About .content {
-	background: linear-gradient(45deg, #2f2f2f, #111111);
 	position: relative;
 	padding: 100px 170px 100px 200px;
 }
@@ -665,7 +664,7 @@ div#About h3 {
 	font-family: "Montserrat" !important;
 }
 
-div#About h2,
+. div#About h2,
 div#About h3 {
 	margin-bottom: 30px;
 }
@@ -696,7 +695,12 @@ div#About .row {
 	display: flex;
 	align-items: center;
 }
-
+.abt-button {
+	width: fit-content;
+}
+.abt-button .a {
+	color: black !important;
+}
 .lrn-more a {
 	border: 2px solid; /* Define the width of the border */
 	border-image: linear-gradient(45deg, #04b4ff, #006bcd) 1;
@@ -746,9 +750,13 @@ div#About .row {
 .brd-line h2 {
 	position: relative;
 }
+.home-about {
+	background: linear-gradient(45deg, #2f2f2f, #111111);
+}
 div#About .content:before {
 	content: "About";
 	position: absolute;
+	display: none;
 	left: -7%;
 	top: 0;
 	font-size: 180px;
@@ -2760,26 +2768,33 @@ btn {
 		#111 100%
 	);
 	padding: 100px 50px;
+	width: 100%;
 }
 #abt-text-about .image {
 	width: 100%;
 	height: 100%;
 	display: flex;
 }
-
-@keyframes scaleAnimation {
-	from {
-		transform: scale(1);
-	}
-	to {
-		transform: scale(1.1);
-	}
+.abt-flexdiv-lsmm .image:hover {
+	scale: 1.2;
 }
 
 #abt-text-about .about-img:hover {
-	animation-name: scaleAnimation;
-	animation-duration: 5s;
-	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transform: scale(1.05);
+	transition: all 0.5s ease-in-out;
+}
+#abt-text-about .about-img:not(:hover) {
+	transform: scale(1);
+	transition: all 0.5s ease-in-out;
+}
+
+#abt-text-system .image:hover {
+	transform: scale(1.05);
+	transition: all 0.5s ease-in-out;
+}
+#abt-text-system .image:not(:hover) {
+	transform: scale(1);
+	transition: all 0.5s ease-in-out;
 }
 
 #abt-text-about .abt-des {
@@ -2853,7 +2868,7 @@ btn {
 
 #abt-text-system {
 	background: white;
-	padding: 100px 50px;
+	padding: 100px 30px;
 }
 
 #abt-text-system .para {
@@ -2874,7 +2889,35 @@ btn {
 	line-height: 50px; /* 151.515% */
 }
 
-#abt-text-system .headcontent {
+#abt-text-about .headcontent {
+	width: 80%;
+	margin: 0px auto;
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+}
+#abt-text-about .headcontent .innerContent {
+	width: 50%;
+}
+#abt-text-about .headcontent .image {
+	width: 50%;
+}
+#abt-text-about .image {
+	width: 50%;
+}
+#abt-text-about .image img,
+#abt-text-system .image img {
+	width: 100%;
+}
+#abt-text-about .image,
+#abt-text-system .image {
+	width: 50%;
+}
+#abt-text-about .innerContent,
+#abt-text-system .innerContent {
+	width: 50%;
+}
+#abt-text-system {
 	width: 80%;
 	margin: 0px auto;
 	display: flex;
@@ -2882,10 +2925,14 @@ btn {
 	gap: 50px;
 }
 
-#abt-text-system .image {
+#abt-text-about .image {
 	width: 100%;
 	height: 100%;
 	display: flex;
+}
+#abt-text-about .image img {
+	width: 100%;
+	border-radius: 20px;
 }
 
 .abt-flexdiv {
@@ -2896,7 +2943,11 @@ btn {
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
-	gap: 100px;
+	gap: 200px;
+	align-items: center;
+}
+.abt-flexdiv-lsmm {
+	background: none !important;
 }
 
 .abt-flexdiv .row-1,
@@ -2923,9 +2974,18 @@ btn {
 	flex-direction: column;
 	gap: 10px;
 }
+.abt-flexdiv .col-2 img:hover {
+	transition: all 0.5s;
+	transform: scale(1.05);
+}
+.abt-flexdiv .col-2 img:not(:hover) {
+	transition: all 0.5s;
+	transform: scale(1);
+}
 .abt-flexdiv .col-2 img {
 	width: 100%;
 	height: 100%;
+	border-radius: 20px;
 }
 .abt-flexdiv .row-1,
 .row-2 .sec-head {
@@ -3007,7 +3067,6 @@ btn {
 		opacity: 0.1;
 	}
 	div#About .content {
-		background: linear-gradient(45deg, #2f2f2f, #111111);
 		position: relative;
 		padding: 60px 50px 60px 150px;
 	}
@@ -3153,8 +3212,8 @@ btn {
 		bottom: 0;
 		opacity: 0.1;
 	}
+
 	div#About .content {
-		background: linear-gradient(45deg, #2f2f2f, #111111);
 		position: relative;
 		padding: 60px 50px 60px 140px;
 	}
@@ -3491,5 +3550,306 @@ btn {
 	}
 	.button-container .button {
 		text-align: left !important;
+	}
+	#abt-text-system .headcontent {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
+	.bannerText {
+		background: none;
+	}
+	.bannerText .heading {
+		font-size: 50px;
+	}
+	#abt-text-about,
+	#abt-text-system {
+		padding: 30px;
+		width: 100%;
+	}
+	#abt-text-system {
+		flex-direction: column-reverse;
+	}
+	#abt-text-about .abt-des {
+		width: 100%;
+	}
+	#abt-text-about .headcontent,
+	#abt-text-system .headcontent {
+		flex-direction: column;
+		width: 100%;
+		margin: 0px;
+	}
+	#abt-text-about .innerContent {
+		width: 100% !important;
+	}
+	#abt-text-system .innerContent {
+		width: 100% !important;
+	}
+	#abt-text-about .image,
+	#abt-text-system .image {
+		width: 100% !important;
+	}
+	#abt-text-about .sub-heading {
+		font-size: 23px;
+		font-weight: 700;
+		line-height: 34px;
+	}
+	#abt-text-about .image img {
+		width: 100%;
+	}
+	#abt-text-system .image img {
+		width: 100%;
+	}
+	.abt-flexdiv {
+		gap: 100px;
+		padding: 30px;
+	}
+	.abt-flexdiv .row-1 {
+		width: 100%;
+		flex-direction: column;
+	}
+	.abt-flexdiv .row-1 .col-1,
+	.abt-flexdiv .row-1 .col-2 {
+		width: 100%;
+	}
+	.abt-flexdiv .row-2 {
+		width: 100%;
+		flex-direction: column;
+	}
+	.abt-flexdiv .row-2 .col-1,
+	.abt-flexdiv .row-2 .col-2 {
+		width: 100%;
+	}
+	#abt-text-about .sec-head {
+		font-size: 30px;
+	}
+	.home-about {
+		flex-direction: column;
+	}
+	div#About {
+		overflow-x: hidden;
+	}
+	div#About .content {
+		padding: 30px !important;
+	}
+	div#About .content:before {
+		display: none;
+	}
+	.featured-products-text {
+		flex-direction: column;
+	}
+	div#hero-cameras h1 {
+		font-size: 70px;
+	}
+	.small-hidden {
+		display: none;
+	}
+	.best-button {
+		width: 100%;
+	}
+	div#hero-cameras:before {
+		width: 180px;
+		height: 180px;
+	}
+	span.webkit-text {
+		display: none;
+	}
+	.ft-products {
+		overflow-x: hidden;
+	}
+	div#feature-products {
+		padding: 30px;
+	}
+	div#all-pro {
+		padding: 50px 14px;
+	}
+	h2.heading {
+		font-size: 40px;
+		line-height: 45px !important;
+	}
+	.partners-sec {
+		margin: 0px;
+	}
+	.product-page-data {
+		flex-direction: column;
+		gap: 20px;
+	}
+	div#product {
+		padding-top: 100px;
+	}
+	.product-page-data-img {
+		width: 80% !important;
+	}
+	.product-page-data-data {
+		width: 100% !important;
+	}
+}
+
+@media screen and (min-width: 401px) and (max-width: 768px) {
+	.products-container .ftrd-pro {
+		width: 100%;
+	}
+	.product-tabs {
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	.main-carousel .carousel-container {
+		width: 100%;
+		height: 100%;
+	}
+	.wrapper {
+		width: 100%;
+		padding: 20px;
+	}
+	.products-heading {
+		flex-direction: column;
+		align-items: center;
+	}
+	.container-img {
+		object-fit: contain;
+	}
+	.products-heading .products-bgtext {
+		display: none;
+	}
+	.button-container {
+		width: 100% !important;
+		text-align: left !important;
+	}
+	.button-container .button {
+		text-align: left !important;
+	}
+	#abt-text-system .headcontent {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
+	.bannerText {
+		background: none;
+	}
+	.bannerText .heading {
+		font-size: 50px;
+	}
+	#abt-text-about,
+	#abt-text-system {
+		padding: 30px;
+		width: 100%;
+	}
+	#abt-text-system {
+		flex-direction: column-reverse;
+	}
+	#abt-text-about .abt-des {
+		width: 100%;
+	}
+	#abt-text-about .headcontent,
+	#abt-text-system .headcontent {
+		flex-direction: column;
+		width: 100%;
+		margin: 0px;
+	}
+	#abt-text-about .innerContent {
+		width: 100% !important;
+	}
+	#abt-text-system .innerContent {
+		width: 100% !important;
+	}
+	#abt-text-about .image,
+	#abt-text-system .image {
+		width: 100% !important;
+	}
+	#abt-text-about .sub-heading {
+		font-size: 23px;
+		font-weight: 700;
+		line-height: 34px;
+	}
+	#abt-text-about .image img {
+		width: 100%;
+	}
+	#abt-text-system .image img {
+		width: 100%;
+	}
+	.abt-flexdiv {
+		gap: 100px;
+		padding: 30px;
+	}
+	.abt-flexdiv .row-1 {
+		width: 100%;
+		flex-direction: column;
+	}
+	.abt-flexdiv .row-1 .col-1,
+	.abt-flexdiv .row-1 .col-2 {
+		width: 100%;
+	}
+	.abt-flexdiv .row-2 {
+		width: 100%;
+		flex-direction: column;
+	}
+	.abt-flexdiv .row-2 .col-1,
+	.abt-flexdiv .row-2 .col-2 {
+		width: 100%;
+	}
+	#abt-text-about .sec-head {
+		font-size: 30px;
+	}
+	.home-about {
+		flex-direction: column;
+	}
+	div#About {
+		overflow-x: hidden;
+	}
+	div#About .content {
+		padding: 30px !important;
+	}
+	div#About .content:before {
+		display: none;
+	}
+	.featured-products-text {
+		flex-direction: column;
+	}
+	div#hero-cameras h1 {
+		font-size: 70px;
+	}
+	.small-hidden {
+		display: none;
+	}
+	.best-button {
+		width: 100%;
+	}
+	div#hero-cameras:before {
+		width: 180px;
+		height: 180px;
+	}
+	span.webkit-text {
+		display: none;
+	}
+	.ft-products {
+		overflow-x: hidden;
+	}
+	div#feature-products {
+		padding: 30px;
+	}
+	div#all-pro {
+		padding: 50px 14px;
+	}
+	h2.heading {
+		font-size: 40px;
+		line-height: 45px !important;
+	}
+	.partners-sec {
+		margin: 0px;
+	}
+	.product-page-data {
+		flex-direction: column;
+		gap: 20px;
+	}
+	div#product {
+		padding-top: 100px;
+	}
+	.product-page-data-img {
+		width: 80% !important;
+	}
+	.product-page-data-data {
+		width: 100% !important;
 	}
 }
