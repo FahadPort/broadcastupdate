@@ -1,4 +1,4 @@
-import { Grid, Container } from "@mui/material";
+import { Grid, Container, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -17,6 +17,8 @@ import fujifilm from "../assets/images/fujifilm.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function About() {
 	const [title, setTitle] = useState("About Us- The BroadCast Store");
@@ -56,77 +58,25 @@ export default function About() {
 	return (
 		<Grid>
 			<div className="innerban">
-				<Container>
-					<div className="bannerText">
-						<h1
-							className="heading"
-							data-aos="fade-up">
-							About Us
-						</h1>
-					</div>
-					<p className="breadcum">Home . About Us</p>
-				</Container>
-			</div>
-			<div id="abt-text-about">
-				<div className="abt-des">
-					<div className="headcontent">
-						<Row>
-							<Col
-								xs="6"
-								className="innerContent">
-								<div>
-									<h3 className="sec-head">About Us</h3>
-									<h4 className="sub-heading">
-										Sell, Buy, Trade, Consign, and Service of <br /> New and
-										Used Professional Equipment.
-									</h4>
-									<p className="para">
-										Broadcast Store or BroadcastStore.co has an extensive
-										inventory of new & used professional audiovisual equipment
-										available at a discounted price to our customers.
-									</p>
-									<p className="para">
-										BroadcastStore.co is the premiere site to list consign, or
-										trade your equipment. Whether rotating out your existing
-										equipment, or clearing out your storage area,
-										BroadcastStore.co can assist you in securing maximum value
-										on your investments.
-									</p>
-									<p className="para">
-										Our service department is second to none. We service all
-										makes and models; digital, analog and HD.
-									</p>
-								</div>
-							</Col>
-							<Col xs="6">
-								<div className="image">
-									<img
-										src={aboutCameraImg}
-										alt=""
-										className="about-img"
-									/>
-								</div>
-							</Col>
-						</Row>
-					</div>
+				<div className="bannerText">
+					<h1
+						className="heading"
+						data-aos="fade-up">
+						About Us
+					</h1>
 				</div>
+				<p className="breadcum">Home . About Us</p>
 			</div>
 
-			<div id="abt-text-system">
+			<div id="abt-text-about">
 				<div className="headcontent">
-					<Col
-						xs="6"
-						gap-2>
-						<div className="image">
-							<img
-								src={systemImg}
-								alt=""
-							/>
-						</div>
-					</Col>
-					<Col xs="6">
-						<div className="innerContent">
-							<h3 className="sec-head">System Integration</h3>
+					<div className="innerContent">
+						<div>
+							<h3 className="sec-head">About Us</h3>
+							<h4 className="sub-heading">
+								Sell, Buy, Trade, Consign, and Service of New and Used
+								Professional Equipment.
+							</h4>
 							<p className="para">
 								Broadcast Store or BroadcastStore.co has an extensive inventory
 								of new & used professional audiovisual equipment available at a
@@ -143,9 +93,44 @@ export default function About() {
 								and models; digital, analog and HD.
 							</p>
 						</div>
-					</Col>
+					</div>
+					<div className="image">
+						<img
+							src={aboutCameraImg}
+							alt=""
+							className="about-img"
+						/>
+					</div>
 				</div>
 			</div>
+
+			<div id="abt-text-system">
+				<div className="image">
+					<img
+						src={systemImg}
+						alt=""
+					/>
+				</div>
+				<div className="innerContent">
+					<h3 className="sec-head">System Integration</h3>
+					<p className="para">
+						Broadcast Store or BroadcastStore.co has an extensive inventory of
+						new & used professional audiovisual equipment available at a
+						discounted price to our customers.
+					</p>
+					<p className="para">
+						BroadcastStore.co is the premiere site to list consign, or trade
+						your equipment. Whether rotating out your existing equipment, or
+						clearing out your storage area, BroadcastStore.co can assist you in
+						securing maximum value on your investments.
+					</p>
+					<p className="para">
+						Our service department is second to none. We service all makes and
+						models; digital, analog and HD.
+					</p>
+				</div>
+			</div>
+
 			<div className="abt-flexdiv">
 				<div className="row-1">
 					<div className="col-1">
@@ -167,6 +152,13 @@ export default function About() {
 							We welcome you to contact us with your needs, and see what we can
 							do for you
 						</p>
+						<Button className="lrn-more abt-button">
+							<Link
+								to={"/LargeScaleMediaMigration"}
+								className="a">
+								learn more <FaArrowRightLong />
+							</Link>
+						</Button>
 					</div>
 					<div className="col-2">
 						<img
@@ -200,7 +192,6 @@ export default function About() {
 						</div>
 						<div>
 							<div className="line-head">
-								<div className="line" />
 								<h3 className="sec-head">Our Goal</h3>
 							</div>
 
@@ -220,6 +211,7 @@ export default function About() {
 					</div>
 				</div>
 			</div>
+
 			<Grid className="partners-sec">
 				<Slider {...logos}>
 					<Grid className="slide-logo">
