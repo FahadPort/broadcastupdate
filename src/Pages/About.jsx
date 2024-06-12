@@ -19,6 +19,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
+import aboutbackgroundText from "../assets/images/aboutbackgroundText.png";
 
 export default function About() {
 	const [title, setTitle] = useState("About Us- The BroadCast Store");
@@ -58,9 +59,14 @@ export default function About() {
 	return (
 		<Grid>
 			<div className="innerban">
-				<div className="bannerText">
+				<div className="contact-bannerText">
+					<img
+						src={aboutbackgroundText}
+						alt="product-bannerText-Img"
+						className="product-bannerText-Img"
+					/>
 					<h1
-						className="heading"
+						class="contact-heading aos-init aos-animate"
 						data-aos="fade-up">
 						About Us
 					</h1>
