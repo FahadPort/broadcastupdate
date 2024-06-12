@@ -179,34 +179,42 @@ export default function Product() {
 	];
 	return (
 		<>
-			<div>
+			<div className="carousel-container1">
 				<Carousel
 					slides={imgItem}
 					autoSlide={true}
 					autoSlideInterval={5000}
 				/>
-				<div className="product-tabs">
-					<div
-						className="box-1"
-						onClick={showAllProducts}>
-						<h3 className={`box-1-title ${allProducts && "active"}`}>
-							All Products
-						</h3>
-					</div>
-					<div
-						className="box-1"
-						onClick={showTopBrands}>
-						<h3 className={`box-1-title ${topBrands && "active"}`}>
-							Top Brands
-						</h3>
-					</div>
-					<div
-						className="box-1"
-						onClick={showTopModals}>
-						<h3 className={`box-1-title ${topModals && "active"}`}>
-							Top Models
-						</h3>
-					</div>
+				<div className="contact-bannerText product-slider-text">
+					<img
+						src={productTextImg}
+						alt="product-bannerText-Img"
+						className="product-bannerText-Img"
+					/>
+					<h1
+						class="contact-heading aos-init aos-animate product-slider-heading"
+						data-aos="fade-up">
+						Products
+					</h1>
+				</div>
+			</div>
+			<div className="product-tabs">
+				<div
+					className="box-1"
+					onClick={showAllProducts}>
+					<h3 className={`box-1-title ${allProducts && "active"}`}>
+						All Products
+					</h3>
+				</div>
+				<div
+					className="box-1"
+					onClick={showTopBrands}>
+					<h3 className={`box-1-title ${topBrands && "active"}`}>Top Brands</h3>
+				</div>
+				<div
+					className="box-1"
+					onClick={showTopModals}>
+					<h3 className={`box-1-title ${topModals && "active"}`}>Top Models</h3>
 				</div>
 			</div>
 			<div className="category">
@@ -315,34 +323,33 @@ export default function Product() {
 						<>
 							<div className="products-container">
 								{featuredProducts.slice(0, 8).map((product) => (
-									<div key={product.id}>
-										<div className="ftrd-slide">
-											<div className="ftrd-pro">
-												<div class="product">
-													<h4 class="title">{product.title}</h4>
-													<p class="sku">SKU# {product.sku}</p>
-													<div class="pro-image">
-														<img
-															src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
-															alt=""
-														/>
-													</div>
-													<p class="short-des">{product.short_desc}</p>
-													<div class="price-btn">
-														<p class="price">
-															Price{" "}
-															<span class="price-no">${product.price}</span>
-														</p>
-														<Button className="lrn-more cart">
-															<Link
-																to={`/${product.slug}`}
-																onClick={(event) =>
-																	handleProductSelect(product, event)
-																}>
-																learn More
-															</Link>
-														</Button>
-													</div>
+									<div
+										className="ftrd-slide"
+										key={product.id}>
+										<div className="ftrd-pro">
+											<div class="product">
+												<h4 class="title">{product.title}</h4>
+												<p class="sku">SKU# {product.sku}</p>
+												<div class="pro-image">
+													<img
+														src={`https://thebroadcaststore.co/admins/public/${product.img_path}`}
+														alt=""
+													/>
+												</div>
+												<p class="short-des">{product.short_desc}</p>
+												<div class="price-btn">
+													<p class="price">
+														Price <span class="price-no">${product.price}</span>
+													</p>
+													<Button className="lrn-more cart">
+														<Link
+															to={`/${product.slug}`}
+															onClick={(event) =>
+																handleProductSelect(product, event)
+															}>
+															learn More
+														</Link>
+													</Button>
 												</div>
 											</div>
 										</div>
