@@ -218,7 +218,6 @@ div#hero-cameras:before {
 }
 
 .slider-main {
-	min-height: unset;
 	background: radial-gradient(50% 50% at 50% 50%, #c7f6d0 0%, #7cb686 92.19%);
 	display: flex;
 	justify-content: space-between;
@@ -397,10 +396,6 @@ div#hero-cameras:before {
 	}
 	.logo a {
 		margin-bottom: 20px;
-	}
-	.slider-main {
-		flex-direction: column;
-		min-height: 900px;
 	}
 	.social-icons a {
 		width: 35px;
@@ -2448,11 +2443,16 @@ strong.pric-title {
 	justify-content: center;
 }
 .product-bannerText,
-.contact-bannerText {
+.contact-bannerText,
+.innerban {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+}
+
+.innerban img {
+	width: 80%;
 }
 
 .product-bannerText .product-heading,
@@ -2474,6 +2474,10 @@ strong.pric-title {
 	justify-content: center;
 	gap: 30px;
 	margin-top: 50px;
+}
+
+.product-slider-text {
+	position: absolute;
 }
 .product-tabs .box-1 {
 	width: 220px;
@@ -2712,17 +2716,11 @@ btn {
 
 /* About Page */
 
-.bannerText {
-	background: url("../public/aboutbackgroundText.png") no-repeat;
-	width: 100%;
-	background-position: center;
-	background-size: cover;
-}
 .innerban {
 	background: url("../public/aboutbackgroundImg.png") lightgray 0px 0px / 100%
 		102.584% no-repeat;
 	width: 100%;
-	height: 70vh;
+	height: 80vh;
 	background-position: center;
 	background-size: cover;
 	display: flex;
@@ -2894,6 +2892,7 @@ btn {
 	margin: 0px auto;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	gap: 50px;
 }
 #abt-text-about .headcontent .innerContent {
@@ -2922,6 +2921,7 @@ btn {
 	margin: 0px auto;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	gap: 50px;
 }
 
@@ -2957,19 +2957,19 @@ btn {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 50px;
+	gap: 20px;
 }
 .abt-flexdiv .row-2 {
 	flex-direction: row-reverse;
 }
 .abt-flexdiv .col-1 {
-	width: 50%;
+	width: 47%;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 }
 .abt-flexdiv .col-2 {
-	width: 50%;
+	width: 47%;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -3466,7 +3466,6 @@ btn {
 		display: none;
 	}
 	.feature-flexbox {
-		flex-wrap: wrap;
 		width: 100% !important;
 	}
 	.footer-links-container {
@@ -3485,9 +3484,6 @@ btn {
 		flex-wrap: wrap;
 		padding: 20px;
 	}
-	.innerban-contact {
-		height: 100vh !important;
-	}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 999px) {
@@ -3497,6 +3493,19 @@ btn {
 }
 
 @media only screen and (min-width: 300px) and (max-width: 519px) {
+}
+.carousel-container1 {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+}
+
+.product-slider-heading {
+	color: #006bcd !important;
 }
 
 .products-container {
@@ -3542,7 +3551,7 @@ btn {
 		object-fit: contain;
 	}
 	.products-heading .products-bgtext {
-		display: none;
+		display: block;
 	}
 	.button-container {
 		width: 100% !important;
@@ -3684,9 +3693,70 @@ btn {
 	.product-page-data-data {
 		width: 100% !important;
 	}
+	.main-carousel {
+		height: 60vh;
+	}
+	.wrapper .icon {
+		width: 45px;
+	}
+	div#tech span.webkit-text {
+		display: none;
+	}
+	.tech-space-col {
+		flex-direction: column;
+	}
+	.ze:before,
+	.fs:before,
+	.fr:before,
+	.ar:before,
+	.af-motr:before {
+		display: none;
+	}
+	div#tech .ar,
+	div#tech .fs {
+		left: 0;
+	}
+	div#tech .fr-col {
+		left: 0;
+		padding: 0px 20px;
+	}
+	.tech-space-col-1 {
+		width: 100% !important;
+		padding: 0px 20px !important;
+	}
+	.tech-space-col-2,
+	tech-inner centerimg {
+		display: none;
+	}
+	.tech-space-col-3 {
+		width: 100% !important;
+		padding: 0px 20px !important;
+	}
+	#tech-space-col-3 {
+		width: 100% !important;
+		padding: 0px 20px !important;
+	}
+	div#tech .af-motr {
+		max-width: 100%;
+		text-align: left;
+		margin: 0;
+		padding: 0px 10px;
+	}
+	div#tech .tech-inner.af-motr h4:before {
+		margin: 0;
+	}
+	.tech-inner .centerimg {
+		display: none;
+	}
 }
 
 @media screen and (min-width: 401px) and (max-width: 768px) {
+	.ftrd-slide {
+		width: 100%;
+	}
+	.feature-col {
+		width: 100% !important;
+	}
 	.products-container .ftrd-pro {
 		width: 100%;
 	}
@@ -3847,9 +3917,364 @@ btn {
 		padding-top: 100px;
 	}
 	.product-page-data-img {
-		width: 80% !important;
+		width: 60% !important;
 	}
 	.product-page-data-data {
 		width: 100% !important;
+	}
+	.main-carousel {
+		height: 60vh;
+	}
+	.wrapper .icon {
+		width: 45px;
+	}
+	div#tech span.webkit-text {
+		display: none;
+	}
+	div#tech span.webkit-text {
+		display: none;
+	}
+	.tech-space-col {
+		flex-direction: column;
+	}
+	.ze:before,
+	.fs:before,
+	.fr:before,
+	.ar:before,
+	.af-motr:before {
+		display: none;
+	}
+	div#tech .ar,
+	div#tech .fs {
+		left: 0;
+	}
+	div#tech .fr-col {
+		left: 0;
+		padding: 0px 20px;
+	}
+	.tech-space-col-1 {
+		width: 100% !important;
+		padding: 0px 20px !important;
+	}
+	.tech-space-col-2,
+	tech-inner centerimg {
+		display: none;
+	}
+	.tech-space-col-3 {
+		width: 100% !important;
+		padding: 0px 20px !important;
+	}
+	#tech-space-col-3 {
+		width: 100% !important;
+		padding: 0px 20px !important;
+	}
+	div#tech .af-motr {
+		max-width: 100%;
+		text-align: left;
+		margin: 0;
+		padding: 0px 10px;
+	}
+	div#tech .tech-inner.af-motr h4:before {
+		margin: 0;
+	}
+	.tech-inner .centerimg {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.product-tabs {
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	.main-carousel .carousel-container {
+		width: 100%;
+		height: 100%;
+	}
+	.wrapper {
+		width: 100%;
+		padding: 20px;
+	}
+	.products-heading {
+		flex-direction: column;
+		align-items: center;
+	}
+	.container-img {
+		object-fit: contain;
+	}
+	.products-heading .products-bgtext {
+		display: none;
+	}
+	.button-container {
+		width: 100% !important;
+		text-align: left !important;
+	}
+	.button-container .button {
+		text-align: left !important;
+	}
+	#abt-text-system .headcontent {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
+	.bannerText {
+		background: none;
+	}
+	.bannerText .heading {
+		font-size: 50px;
+	}
+	#abt-text-about,
+	#abt-text-system {
+		padding: 30px;
+		width: 100%;
+	}
+	#abt-text-system {
+		flex-direction: column-reverse;
+	}
+	#abt-text-about .abt-des {
+		width: 100%;
+	}
+	#abt-text-about .headcontent,
+	#abt-text-system .headcontent {
+		flex-direction: column;
+		width: 100%;
+		margin: 0px;
+	}
+	#abt-text-about .innerContent {
+		width: 100% !important;
+	}
+	#abt-text-system .innerContent {
+		width: 100% !important;
+	}
+	#abt-text-about .image,
+	#abt-text-system .image {
+		width: 100% !important;
+	}
+	#abt-text-about .sub-heading {
+		font-size: 23px;
+		font-weight: 700;
+		line-height: 34px;
+	}
+	#abt-text-about .image img {
+		width: 100%;
+	}
+	#abt-text-system .image img {
+		width: 100%;
+	}
+	.abt-flexdiv {
+		gap: 100px;
+		padding: 30px;
+	}
+	.abt-flexdiv .row-1 {
+		width: 100%;
+		flex-direction: column;
+	}
+	.abt-flexdiv .row-1 .col-1,
+	.abt-flexdiv .row-1 .col-2 {
+		width: 100%;
+	}
+	.abt-flexdiv .row-2 {
+		width: 100%;
+		flex-direction: column;
+	}
+	.abt-flexdiv .row-2 .col-1,
+	.abt-flexdiv .row-2 .col-2 {
+		width: 100%;
+	}
+	#abt-text-about .sec-head {
+		font-size: 30px;
+	}
+	.home-about {
+		flex-direction: column;
+	}
+	div#About {
+		overflow-x: hidden;
+	}
+	div#About .content {
+		padding: 30px !important;
+	}
+	div#About .content:before {
+		display: none;
+	}
+	.featured-products-text {
+		flex-direction: column;
+	}
+	div#hero-cameras h1 {
+		font-size: 70px;
+	}
+	.small-hidden {
+		display: none;
+	}
+	.best-button {
+		width: 100%;
+	}
+	div#hero-cameras:before {
+		width: 180px;
+		height: 180px;
+	}
+	span.webkit-text {
+		display: none;
+	}
+	.ft-products {
+		overflow-x: hidden;
+	}
+	div#feature-products {
+		padding: 30px;
+	}
+	div#all-pro {
+		padding: 50px 14px;
+	}
+	h2.heading {
+		font-size: 40px;
+		line-height: 45px !important;
+	}
+	.partners-sec {
+		margin: 0px;
+	}
+	.product-page-data {
+		flex-direction: column;
+		gap: 20px;
+	}
+	div#product {
+		padding-top: 100px;
+	}
+	.product-page-data-img {
+		width: 60% !important;
+	}
+	.product-page-data-data {
+		width: 100% !important;
+	}
+	.wrapper .icon {
+		width: 45px;
+	}
+	.svg-bg {
+		display: none;
+	}
+	div#tech span.webkit-text {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1490px) {
+	.main-carousel .carousel-container {
+		width: 100%;
+		height: 100%;
+	}
+	.container-img {
+		object-fit: contain;
+	}
+	.products-heading .products-bgtext {
+		display: none;
+	}
+	#abt-text-system .headcontent {
+		width: 100%;
+		display: flex;
+		gap: 50px;
+	}
+	.bannerText {
+		background: none;
+	}
+	.bannerText .heading {
+		font-size: 100px;
+	}
+	#abt-text-about,
+	#abt-text-system {
+		padding: 30px;
+		width: 100%;
+	}
+
+	#abt-text-about .abt-des {
+		width: 100%;
+	}
+	#abt-text-about .headcontent,
+	#abt-text-system .headcontent {
+		width: 100%;
+		margin: 0px;
+	}
+	#abt-text-about .innerContent {
+		width: 100% !important;
+	}
+	#abt-text-system .innerContent {
+		width: 100% !important;
+	}
+	#abt-text-about .image,
+	#abt-text-system .image {
+		width: 100% !important;
+	}
+	#abt-text-about .sub-heading {
+		font-size: 23px;
+		font-weight: 700;
+		line-height: 34px;
+	}
+	#abt-text-about .image img {
+		width: 100%;
+	}
+	#abt-text-system .image img {
+		width: 100%;
+	}
+	.abt-flexdiv {
+		gap: 100px;
+		padding: 30px;
+	}
+	.abt-flexdiv .row-1 {
+		width: 100%;
+	}
+	.abt-flexdiv .row-2 {
+		width: 100%;
+	}
+	#abt-text-about .sec-head {
+		font-size: 30px;
+	}
+	.home-about {
+		flex-direction: column;
+	}
+	div#About {
+		overflow-x: hidden;
+	}
+	div#About .content {
+		padding: 30px !important;
+	}
+	div#About .content:before {
+		display: none;
+	}
+	.featured-products-text {
+		flex-direction: column;
+	}
+	div#hero-cameras h1 {
+		font-size: 70px;
+	}
+	.small-hidden {
+		display: none;
+	}
+	.best-button {
+		width: 100%;
+	}
+	div#hero-cameras:before {
+		width: 180px;
+		height: 180px;
+	}
+	span.webkit-text {
+		display: none;
+	}
+	.ft-products {
+		overflow-x: hidden;
+	}
+	div#feature-products {
+		padding: 30px;
+	}
+	div#all-pro {
+		padding: 50px 14px;
+	}
+	h2.heading {
+		font-size: 40px;
+		line-height: 45px !important;
+	}
+	.partners-sec {
+		margin: 0px;
+	}
+
+	div#product {
+		padding-top: 100px;
 	}
 }
