@@ -1419,6 +1419,7 @@ div#all-pro .product {
 }
 
 div#all-pro {
+	z-index: 10;
 	overflow: hidden;
 }
 
@@ -3636,9 +3637,6 @@ btn {
 	.home-about {
 		flex-direction: column;
 	}
-	div#About {
-		overflow-x: hidden;
-	}
 	div#About .content {
 		padding: 30px !important;
 	}
@@ -3663,9 +3661,6 @@ btn {
 	}
 	span.webkit-text {
 		display: none;
-	}
-	.ft-products {
-		overflow-x: hidden;
 	}
 	div#feature-products {
 		padding: 30px;
@@ -3865,9 +3860,6 @@ btn {
 	.home-about {
 		flex-direction: column;
 	}
-	div#About {
-		overflow-x: hidden;
-	}
 	div#About .content {
 		padding: 30px !important;
 	}
@@ -3892,9 +3884,6 @@ btn {
 	}
 	span.webkit-text {
 		display: none;
-	}
-	.ft-products {
-		overflow-x: hidden;
 	}
 	div#feature-products {
 		padding: 30px;
@@ -4088,9 +4077,6 @@ btn {
 	.home-about {
 		flex-direction: column;
 	}
-	div#About {
-		overflow-x: hidden;
-	}
 	div#About .content {
 		padding: 30px !important;
 	}
@@ -4115,9 +4101,6 @@ btn {
 	}
 	span.webkit-text {
 		display: none;
-	}
-	.ft-products {
-		overflow-x: hidden;
 	}
 	div#feature-products {
 		padding: 30px;
@@ -4153,6 +4136,9 @@ btn {
 	}
 	div#tech span.webkit-text {
 		display: none;
+	}
+	#aboutCamera {
+		width: 70%;
 	}
 }
 
@@ -4229,9 +4215,6 @@ btn {
 	.home-about {
 		flex-direction: column;
 	}
-	div#About {
-		overflow-x: hidden;
-	}
 	div#About .content {
 		padding: 30px !important;
 	}
@@ -4256,9 +4239,6 @@ btn {
 	}
 	span.webkit-text {
 		display: none;
-	}
-	.ft-products {
-		overflow-x: hidden;
 	}
 	div#feature-products {
 		padding: 30px;
