@@ -6,11 +6,11 @@
 	box-sizing: border-box;
 }
 html {
-	overflow-x: hidden;
+	overflow-x: hidden !important;
 }
 body {
 	font-family: "Inter", sans-serif;
-	overflow-x: hidden;
+	overflow-x: hidden !important;
 	font-weight: 400;
 }
 h1,
@@ -4285,9 +4285,7 @@ btn {
 	#abt-text-about .sec-head {
 		font-size: 30px;
 	}
-	.home-about {
-		flex-direction: column;
-	}
+
 	div#About .content {
 		padding: 30px !important;
 	}
