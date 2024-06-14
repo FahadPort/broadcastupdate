@@ -19,9 +19,6 @@ export default function Carousel({
 		const slideInterval = setInterval(next, autoSlideInterval);
 		return () => clearInterval(slideInterval);
 	});
-	const goToSlide = (index) => {
-		setCurr(index);
-	};
 	return (
 		<div
 			className="main-carousel"
@@ -59,23 +56,6 @@ export default function Carousel({
 					</button>
 				</div>
 			)}
-			<div className="dots">
-				<div className="dots-container">
-					{slides.map((_, i) => (
-						<button
-							key={i}
-							onClick={() => goToSlide(i)}
-							className={`btn
-                ${
-									curr === i
-										? "p-[5px] bg-gray-600"
-										: "bg-opacity-75 bg-gray-200"
-								}
-              `}
-						/>
-					))}
-				</div>
-			</div>
 		</div>
 	);
 }

@@ -1,63 +1,17 @@
 import React, { useState, useRef } from "react";
 import { useEffect } from "react";
 import Slider from "react-slick";
-import {
-	Grid,
-	Typography,
-	Container,
-	Button,
-	Step,
-	StepLabel,
-	StepContent,
-} from "@mui/material";
+import { Grid, Container, Button } from "@mui/material";
 import axios from "axios";
 import { IoStarSharp } from "react-icons/io5";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import headset01 from "../assets/images/hero-img.png";
-import bannerimg from "../assets/images/ubiquiti-transparent1.png";
-import bannerimg2 from "../assets/images/89161553346861.png";
-import productimg from "../assets/images/product-img.png";
-import product01 from "../assets/images/ctgr-img1.jpg";
-import product02 from "../assets/images/ctgr-img2.jpg";
-import product03 from "../assets/images/ctgr-img3.jpg";
-import product04 from "../assets/images/ctgr-img4.jpg";
-import logo1 from "../assets/images/logo1.png";
-import logo2 from "../assets/images/logo2.png";
-import logo3 from "../assets/images/logo3.png";
-import logo4 from "../assets/images/logo4.png";
-import logo5 from "../assets/images/logo5.png";
-import logo6 from "../assets/images/logo6.png";
-import logo7 from "../assets/images/logo7.png";
-import logo8 from "../assets/images/logo8.png";
-import logo9 from "../assets/images/logo9.png";
-import man from "../assets/images/pexels-photo.png";
 import { gsap } from "gsap";
-import items from "../assets/images/items.png";
-import TextField from "@mui/material/TextField";
-import HDK79EC2 from "../assets/images/HDK-79EC2.jpg";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import JVCAV from "../assets/images/JVCAV.jpg";
-import JVCAVPRO from "../assets/images/JVCAVPRO.jpg";
-import JVCDV from "../assets/images/JVCDV.jpg";
-import JVCKV from "../assets/images/JVCKV.jpg";
-import NexioNxAmpImage from "../assets/images/NexioNxAmpImage.png";
-import canon1 from "../assets/images/Canon1.jpg";
-import canon2 from "../assets/images/Canon2.avif";
-import canon3 from "../assets/images/Canon3.avif";
-import canon4 from "../assets/images/Canon4.jpg";
-import sony from "../assets/images/sony.png";
-import KOMODO from "../assets/images/KOMODO.png";
-import Manfrotto from "../assets/images/Manfrotto.png";
-import Steadicam from "../assets/images/Steadicam.png";
+import { Link, useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import cameraabt from "../assets/images/cameraabt.png";
-import green from "../assets/images/green.png";
-import blue from "../assets/images/blue.png";
-import red from "../assets/images/red.png";
-import white from "../assets/images/white.png";
-import black from "../assets/images/black.png";
 import tech from "../assets/images/tech.png";
 
 import panasonic from "../assets/images/panasonic.png";
@@ -70,7 +24,6 @@ import OpenerLoading from "../assets/images/OpenerLoading.gif";
 
 // icons
 import { FaArrowRightLong } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

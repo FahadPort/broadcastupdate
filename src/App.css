@@ -5,6 +5,9 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+html {
+	overflow-x: hidden;
+}
 body {
 	font-family: "Inter", sans-serif;
 	overflow-x: hidden;
@@ -2556,12 +2559,16 @@ product-tabs .box-2 {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	transform: scale(0.6);
 }
 
 .main-carousel .carousel-icon {
 	position: absolute;
 	inset: 0;
 	display: flex;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px;
@@ -4139,6 +4146,52 @@ btn {
 	}
 	#aboutCamera {
 		width: 70%;
+	}
+	.tech-space-col {
+		flex-direction: column;
+	}
+	.ze:before,
+	.fs:before,
+	.fr:before,
+	.ar:before,
+	.af-motr:before {
+		display: none;
+	}
+	div#tech .ar,
+	div#tech .fs {
+		left: 0;
+	}
+	div#tech .fr-col {
+		left: 0;
+		padding: 0px 20px;
+	}
+	.tech-space-col-1 {
+		width: 100% !important;
+		padding: 0px 20px !important;
+	}
+	.tech-space-col-2,
+	tech-inner centerimg {
+		display: none;
+	}
+	.tech-space-col-3 {
+		width: 100% !important;
+		padding: 0px 20px !important;
+	}
+	#tech-space-col-3 {
+		width: 100% !important;
+		padding: 0px 20px !important;
+	}
+	div#tech .af-motr {
+		max-width: 100%;
+		text-align: left;
+		margin: 0;
+		padding: 0px 10px;
+	}
+	div#tech .tech-inner.af-motr h4:before {
+		margin: 0;
+	}
+	.tech-inner .centerimg {
+		display: none;
 	}
 }
 
