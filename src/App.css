@@ -3750,9 +3750,29 @@ btn {
 	.tech-inner .centerimg {
 		display: none;
 	}
+	.slider-images > img.active {
+		transform: scale(2);
+	}
+	.slider-main {
+		height: 80vh;
+	}
+	.slider-images > img.active {
+		top: 15%;
+		left: 5%;
+	}
 }
 
 @media screen and (min-width: 401px) and (max-width: 768px) {
+	.slider-images > img.active {
+		transform: scale(2);
+	}
+	.slider-main {
+		height: 80vh;
+	}
+	.slider-images > img.active {
+		top: 15%;
+		left: 5%;
+	}
 	.ftrd-slide {
 		width: 100%;
 	}
